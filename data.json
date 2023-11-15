@@ -38,198 +38,81 @@
       {
         "name": "Glas",
         "impact_score": 2,
+        "decomposition_time": "mere end 1 million år"
+      },
+      {
+        "name": "Ballon",
+        "impact_score": 4,
+        "decomposition_time": "4 år"
+      },
+      {
+        "name": "æbleskrog",
+        "impact_score": 2,
+        "decomposition_time": "2 måneder"
+      },
+      {
+        "name": "Fiskesnøre",
+        "impact_score": 5,
+        "decomposition_time": "600 år"
+      },
+      {
+        "name": "Plastkrus",
+        "impact_score": 3,
+        "decomposition_time": "50 år"
+      },
+      {
+        "name": "Ispind",
+        "impact_score": 2,
+        "decomposition_time": "10 år"
+      },
+      {
+        "name": "Papkrus",
+        "impact_score": 2,
         "decomposition_time": ""
       },
       {
-        "name": "Balloon",
+        "name": "Kapsel",
         "impact_score": 4,
-        "decomposition_time": "Variable"
+        "decomposition_time": "100 år"
       },
       {
-        "name": "Apple hull",
+        "name": "Appelsinskræld",
         "impact_score": 2,
-        "decomposition_time": "Several weeks"
+        "decomposition_time": "5 uger"
       },
       {
-        "name": "Fishing line",
+        "name": "Bananskræld",
+        "impact_score": 2,
+        "decomposition_time": "5 uger"
+      },
+      {
+        "name": "Mælkekarton",
+        "impact_score": 3,
+        "decomposition_time": "2 år"
+      },
+      {
+        "name": "Nylon materialer",
+        "impact_score": 4,
+        "decomposition_time": "40 år"
+      },
+      {
+        "name": "Mobiltelefon",
         "impact_score": 5,
-        "decomposition_time": "Indefinite"
+        "decomposition_time": "1000 år"
       },
       {
-        "name": "Plastic mugs",
-        "impact_score": 3,
-        "decomposition_time": "Hundreds of years"
-      },
-      {
-        "name": "Popsicle",
+        "name": "Cykel",
         "impact_score": 2,
-        "decomposition_time": "Several weeks"
+        "decomposition_time": "Mere end 1000 år"
       },
       {
-        "name": "Cardboard mugs",
+        "name": "Møbler",
         "impact_score": 2,
-        "decomposition_time": "Several weeks"
+        "decomposition_time": "13 år"
       },
       {
-        "name": "Capsule",
-        "impact_score": 4,
-        "decomposition_time": "Variable"
-      },
-      {
-        "name": "Candy",
+        "name": "Tøj",
         "impact_score": 2,
-        "decomposition_time": "Several weeks"
+        "decomposition_time": "5 år"
       },
-      {
-        "name": "Candy bags",
-        "impact_score": 4,
-        "decomposition_time": "Variable"
-      },
-      {
-        "name": "Orange peel",
-        "impact_score": 2,
-        "decomposition_time": "Several weeks"
-      },
-      {
-        "name": "Banana peel",
-        "impact_score": 2,
-        "decomposition_time": "Several weeks"
-      },
-      {
-        "name": "Milk carton",
-        "impact_score": 3,
-        "decomposition_time": "Several years"
-      },
-      {
-        "name": "Nylon material",
-        "impact_score": 4,
-        "decomposition_time": "Hundreds of years"
-      },
-      {
-        "name": "Mobile phone",
-        "impact_score": 5,
-        "decomposition_time": "Variable"
-      },
-      {
-        "name": "Bike",
-        "impact_score": 2,
-        "decomposition_time": "Variable (depends on materials)"
-      },
-      {
-        "name": "Furniture",
-        "impact_score": 2,
-        "decomposition_time": "Variable (depends on materials)"
-      },
-      {
-        "name": "Clothing",
-        "impact_score": 2,
-        "decomposition_time": "Variable"
-      },
-      {
-        "name": "Battery",
-        "impact_score": 5,
-        "decomposition_time": "Variable"
-      },
-      {
-        "name": "Plastic straws",
-        "impact_score": 4,
-        "decomposition_time": "Hundreds of years"
-      },
-      {
-        "name": "Styrofoam containers",
-        "impact_score": 4,
-        "decomposition_time": "Thousands of years"
-      },
-      {
-        "name": "Plastic cutlery",
-        "impact_score": 3,
-        "decomposition_time": "Hundreds of years"
-      },
-      {
-        "name": "Disposable diapers",
-        "impact_score": 3,
-        "decomposition_time": "Several hundred years"
-      },
-      {
-        "name": "Microplastics",
-        "impact_score": 5,
-        "decomposition_time": "Indefinite"
-      },
-      {
-        "name": "Single-use coffee cups",
-        "impact_score": 3,
-        "decomposition_time": "Several years"
-      },
-      {
-        "name": "Cigarette packaging",
-        "impact_score": 4,
-        "decomposition_time": "Several years"
-      },
-      {
-        "name": "Fast-food packaging",
-        "impact_score": 4,
-        "decomposition_time": "Several years"
-      },
-      {
-        "name": "Old appliances/electronics",
-        "impact_score": 4,
-        "decomposition_time": "Variable (components may take years to centuries)"
-      },
-      {
-        "name": "Automotive fluids (oil, coolant, etc.)",
-        "impact_score": 5,
-        "decomposition_time": "Variable (may persist for a long time)"
-      },
-      {
-        "name": "Paint cans",
-        "impact_score": 4,
-        "decomposition_time": "Variable (depends on the type of paint)"
-      },
-      {
-        "name": "Chemical pesticides and herbicides",
-        "impact_score": 5,
-        "decomposition_time": "Variable (persistent in the environment)"
-      },
-      {
-        "name": "Single-use wet wipes",
-        "impact_score": 3,
-        "decomposition_time": "Several years"
-      },
-      {
-        "name": "Plastic utensils",
-        "impact_score": 3,
-        "decomposition_time": "Hundreds of years"
-      },
-      {
-        "name": "Disposable razors",
-        "impact_score": 3,
-        "decomposition_time": "Several years"
-      },
-      {
-        "name": "Aerosol cans",
-        "impact_score": 3,
-        "decomposition_time": "Variable (may rust and break down over time)"
-      },
-      {
-        "name": "Broken glass",
-        "impact_score": 3,
-        "decomposition_time": "Indefinite"
-      },
-      {
-        "name": "Disposable cameras",
-        "impact_score": 3,
-        "decomposition_time": "Variable (depends on materials)"
-      },
-      {
-        "name": "Plastic packaging (e.g., blister packs)",
-        "impact_score": 4,
-        "decomposition_time": "Hundreds of years"
-      },
-      {
-        "name": "Plastic wrap/cling film",
-        "impact_score": 4,
-        "decomposition_time": "Hundreds of years"
-      }
-    ]
-  }
-  
+    ]}
