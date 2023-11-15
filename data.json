@@ -20,7 +20,7 @@
       },
       {
         "name": "Papir poser",
-        "impact_score": 5,
+        "impact_score": 1,
         "decomposition_time": "1 måned",
         "Description": "En papirpose består af organisk materiale og er vandopløselig."
       },
@@ -28,55 +28,55 @@
         "name": "Plastik poser",
         "impact_score": 5,
         "decomposition_time": "20 år",
-        "Description": "Plastposer er ikke biologisk nedbrydelige. I stedet nedbrydes plastposen over tid til mindre og mindre plastpartikler"
+        "Description": "Plastik poser er ikke biologisk nedbrydelige. I stedet nedbrydes plastposen over tid til mindre og mindre plastpartikler"
       },
       {
         "name": "Hundelort",
         "impact_score": 2,
         "decomposition_time": "2 uger",
-        "Description": "Hundelort er "
+        "Description": "Hundelort er orgarnisk materiale og er nedbrydeligt"
       },
       {
-        "name": "Aluminium Dåser",
+        "name": "Aluminiumsdåser",
         "impact_score": 3,
         "decomposition_time": "500 år",
-        "Description": ""
+        "Description": "Aluminiomsdåser består ar metal som har en lang nedbrydelsestid"
       },
       {
-        "name": "Plastic flaske",
+        "name": "Plastik flasker",
         "impact_score": 4,
-        "decomposition_time": "450 år",
-        "Description": ""
+        "decomposition_time": "20 år",
+        "Description": "Plastik flasker er ikke biologisk nedbrydelige. I stedet nedbrydes plastposen over tid til mindre og mindre plastpartikler"
       },
       {
         "name": "Glas",
         "impact_score": 2,
         "decomposition_time": "mere end 1 million år",
-        "Description": ""
+        "Description": "Glas er et holdbart materiale"
       },
       {
         "name": "Ballon",
         "impact_score": 4,
         "decomposition_time": "4 år",
-        "Description": ""
+        "Description": "Ballonner er lavet af en forarbejdet form for latex"
       },
       {
-        "name": "æbleskrog",
+        "name": "Æbleskrog",
         "impact_score": 2,
         "decomposition_time": "2 måneder",
-        "Description": ""
+        "Description": "Æbleskrog er organsik materiale"
       },
       {
         "name": "Fiskesnøre",
         "impact_score": 5,
         "decomposition_time": "600 år",
-        "Description": ""
+        "Description": "Fiskesnøre er lavet af flere forskellige materialer blandt andet plastik og nylon."
       },
       {
         "name": "Plastkrus",
         "impact_score": 3,
         "decomposition_time": "50 år",
-        "Description": ""
+        "Description": "Plastkrus er ikke biologisk nedbrydelige. I stedet nedbrydes plastposen over tid til mindre og mindre plastpartikler"
       },
       {
         "name": "Ispind",
@@ -87,7 +87,7 @@
       {
         "name": "Papkrus",
         "impact_score": 2,
-        "decomposition_time": "",
+        "decomposition_time": "10 år",
         "Description": ""
       },
       {
@@ -97,13 +97,13 @@
         "Description": ""
       },
       {
-        "name": "Appelsinskræld",
+        "name": "Appelsinskrald",
         "impact_score": 2,
         "decomposition_time": "5 uger",
         "Description": ""
       },
       {
-        "name": "Bananskræld",
+        "name": "Bananskrald",
         "impact_score": 2,
         "decomposition_time": "5 uger",
         "Description": ""
