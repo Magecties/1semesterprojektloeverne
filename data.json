@@ -3,116 +3,145 @@
       {
         "name": "Cigaretskoder",
         "impact_score": 5,
-        "decomposition_time": "4 år"
+        "decomposition_time": "4 år",
+        "Description": "Cigaretfilteret er lavet af plasttypen plastcelluloseacetat, en ikke-biologisk nedbrydelig plast, der bliver til mikroplast."
       },
       {
         "name": "Nicotinposer",
         "impact_score": 4,
-        "decomposition_time": ""
+        "decomposition_time": "",
+        "Description": ""
       },
       {
         "name": "Tyggegummi",
         "impact_score": 3,
-        "decomposition_time": "25 år"
+        "decomposition_time": "25 år",
+        "Description": "Tyggegummi består af syntetisk gummi, der er tilsat sødestoffer, blødgørere og smagsstoffer, og deler egenskaber med andre gummibaserede produkter som bildæk og lim."
+      },
+      {
+        "name": "Papir poser",
+        "impact_score": 5,
+        "decomposition_time": "1 måned",
+        "Description": "En papirpose består af organisk materiale og er vandopløselig."
       },
       {
         "name": "Plastik poser",
         "impact_score": 5,
-        "decomposition_time": "20 år"
+        "decomposition_time": "20 år",
+        "Description": "Plastposer er ikke biologisk nedbrydelige. I stedet nedbrydes plastposen over tid til mindre og mindre plastpartikler"
       },
       {
         "name": "Hundelort",
         "impact_score": 2,
-        "decomposition_time": "2 uger"
+        "decomposition_time": "2 uger",
+        "Description": "Hundelort er "
       },
       {
         "name": "Aluminium Dåser",
         "impact_score": 3,
-        "decomposition_time": "500 år"
+        "decomposition_time": "500 år",
+        "Description": ""
       },
       {
         "name": "Plastic flaske",
         "impact_score": 4,
-        "decomposition_time": "450 år"
+        "decomposition_time": "450 år",
+        "Description": ""
       },
       {
         "name": "Glas",
         "impact_score": 2,
-        "decomposition_time": "mere end 1 million år"
+        "decomposition_time": "mere end 1 million år",
+        "Description": ""
       },
       {
         "name": "Ballon",
         "impact_score": 4,
-        "decomposition_time": "4 år"
+        "decomposition_time": "4 år",
+        "Description": ""
       },
       {
         "name": "æbleskrog",
         "impact_score": 2,
-        "decomposition_time": "2 måneder"
+        "decomposition_time": "2 måneder",
+        "Description": ""
       },
       {
         "name": "Fiskesnøre",
         "impact_score": 5,
-        "decomposition_time": "600 år"
+        "decomposition_time": "600 år",
+        "Description": ""
       },
       {
         "name": "Plastkrus",
         "impact_score": 3,
-        "decomposition_time": "50 år"
+        "decomposition_time": "50 år",
+        "Description": ""
       },
       {
         "name": "Ispind",
         "impact_score": 2,
-        "decomposition_time": "10 år"
+        "decomposition_time": "10 år",
+        "Description": ""
       },
       {
         "name": "Papkrus",
         "impact_score": 2,
-        "decomposition_time": ""
+        "decomposition_time": "",
+        "Description": ""
       },
       {
         "name": "Kapsel",
         "impact_score": 4,
-        "decomposition_time": "100 år"
+        "decomposition_time": "100 år",
+        "Description": ""
       },
       {
         "name": "Appelsinskræld",
         "impact_score": 2,
-        "decomposition_time": "5 uger"
+        "decomposition_time": "5 uger",
+        "Description": ""
       },
       {
         "name": "Bananskræld",
         "impact_score": 2,
-        "decomposition_time": "5 uger"
+        "decomposition_time": "5 uger",
+        "Description": ""
       },
       {
         "name": "Mælkekarton",
         "impact_score": 3,
-        "decomposition_time": "2 år"
+        "decomposition_time": "2 år",
+        "Description": ""
       },
       {
         "name": "Nylon materialer",
         "impact_score": 4,
-        "decomposition_time": "40 år"
+        "decomposition_time": "40 år",
+        "Description": ""
       },
       {
         "name": "Mobiltelefon",
         "impact_score": 5,
-        "decomposition_time": "1000 år"
+        "decomposition_time": "1000 år",
+        "Description": ""
       },
       {
         "name": "Cykel",
         "impact_score": 2,
-        "decomposition_time": "Mere end 1000 år"
+        "decomposition_time": "Mere end 1000 år",
+        "Description": ""
       },
       {
         "name": "Møbler",
         "impact_score": 2,
-        "decomposition_time": "13 år"
+        "decomposition_time": "13 år",
+        "Description": ""
       },
       {
         "name": "Tøj",
         "impact_score": 2,
-        "decomposition_time": "5 år"
-      },
+        "decomposition_time": "5 år",
+        "Description": ""
+      }
     ]}
