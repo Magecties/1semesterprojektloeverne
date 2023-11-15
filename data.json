@@ -82,66 +82,66 @@
         "name": "Ispind",
         "impact_score": 2,
         "decomposition_time": "10 år",
-        "Description": ""
+        "Description": "Ispinde behandles med en fødevaregodkendt voks, der gør, at isen ikke går i forbindelse med træet "
       },
       {
         "name": "Papkrus",
         "impact_score": 2,
         "decomposition_time": "10 år",
-        "Description": ""
+        "Description": "Indersiden af papkruset er dækket med et tyndt lag plast af typen polyethylen, som er en form for mikroplast."
       },
       {
         "name": "Kapsel",
         "impact_score": 4,
         "decomposition_time": "100 år",
-        "Description": ""
+        "Description": "En kapsel er lavet af metal med en tætningsplade bestående af en plastikskive"
       },
       {
         "name": "Appelsinskrald",
         "impact_score": 2,
         "decomposition_time": "5 uger",
-        "Description": ""
+        "Description": "Appelsisnskrald er orgarnsik materiale"
       },
       {
         "name": "Bananskrald",
         "impact_score": 2,
         "decomposition_time": "5 uger",
-        "Description": ""
+        "Description": "Banankrald er orgarnsik materiale"
       },
       {
         "name": "Mælkekarton",
         "impact_score": 3,
         "decomposition_time": "2 år",
-        "Description": ""
+        "Description": "En mælkekarton har et lag af plastik selvom resten er karton"
       },
       {
         "name": "Nylon materialer",
         "impact_score": 4,
         "decomposition_time": "40 år",
-        "Description": ""
+        "Description": "Nylon er en syntetisk polymer, der er sammensat af flere enheder, nemlig en diamin og en dicarboxylsyre ved hjælp af amidbindinger"
       },
       {
         "name": "Mobiltelefon",
         "impact_score": 5,
         "decomposition_time": "1000 år",
-        "Description": ""
+        "Description": "En mobiltelefon indeholder 40 forskellige materialer"
       },
       {
         "name": "Cykel",
         "impact_score": 2,
         "decomposition_time": "Mere end 1000 år",
-        "Description": ""
+        "Description": "En cykel er lavet af enten carbon eller aluminium"
       },
       {
         "name": "Møbler",
         "impact_score": 2,
         "decomposition_time": "13 år",
-        "Description": ""
+        "Description": "Møbler består af forskellige former for træ som er forarbejdet"
       },
       {
         "name": "Tøj",
         "impact_score": 2,
         "decomposition_time": "5 år",
-        "Description": ""
+        "Description": "Tøj er lavet af naturfibre som hør, silke og bomuld, derudover kunstfibre som akryl, nylon, polyester og spandex "
       }
     ]}
