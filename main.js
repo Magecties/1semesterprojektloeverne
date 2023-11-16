@@ -1,42 +1,65 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const { Pool } = require('pg');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
+const port = 3000;
+const { Client } = require("pg");
+var pg = require('pg');
 
-// Configure morgan to log requests
-app.use(morgan('dev'));
-
-// Parse JSON request bodies
-app.use(bodyParser.json());
-
-// Create a PostgreSQL connection pool
-const pool = new Pool({
-  connectionString: 'postgres://wqynvjtr:p2fzm-0YY5RHj2hcczCiL63PoaxUPhtL@cornelius.db.elephantsql.com/wqynvjtr',
+const klient = new Client({
+user: "wqynvjtr",
+host: "cornelius.db.elephantsql.com",
+database: "wqynvjtr", //læg mærke til at user og database er det samme på elephant, da vi er på en shared instance
+password: "p2fzm-0YY5RHj2hcczCiL63PoaxUPhtL",
+port: 5432,
+ssl: {
+rejectUnauthorized: false,
+},
 });
 
-// Test the database connection
-pool.connect((err, client, done) => {
-  if (err) {
-    console.error('Error connecting to the database', err);
-  } else {
-    console.log('Connected to the database');
-  }
-});
+const qry = 'SELECT * from skrald';
 
-// Define your routes and CRUD operations here
+klient.connect();
+app.get("/skrald", async (req, res) => {
+try {
+let queryData = await klient.query(qry);
+res.json({
+"ok": true,
+"skrald": queryData.rows,
+})
+} catch (error) {
+res.json({
+"ok": false,
+"message": error.message,
+})
+};
+})
 
-// Start your Express server
-const port = process.env.PORT || 3000;
+
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+console.log(`Appl. lytter på http://localhost:${port}`);
 });
 
-app.get('/skrald', (req, res) => {
-    pool.query('SELECT * FROM skrald;', (err, result) => {
-      if (err) {
-        console.error('Error executing SQL query', err);
-        res.status(500).json({ error: 'Internal server error' });
-      }
-    });
-  });
+
+
+/*
+En anden måde at gøre det på ved at bruge en connection string. Det fylder lidt
+mindre,
+men gør at man skal forstå de forskellige delelementer i selve connection
+string'en.
+Bliver typisk brugt af erfarne udviklere, da det netop fylder mindre. De første fem
+linjer
+skal stadig være med, mens resten af koden udskiftes med følgende:
+const connString = 'postgres://rhdpbdhc:Tw1Ig4dRU_shwpzDrKXjEE7S-
+WRJImzx@cornelius.db.elephantsql.com/rhdpbdhc';
+var client = new pg.Client(connString);
+client.connect(function(err) {
+if(err) {
+return console.error('could not connect to postgres', err);
+}
+client.query('SELECT food_item from food', function(err, result) {
+if(err) {
+return console.error('error running query', err);
+}
+console.log(result.rows[0]);
+client.end();
+});
+});*/
