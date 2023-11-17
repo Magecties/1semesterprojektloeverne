@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const { Client } = require("pg");
-var pg = require('pg');
+let pg = require('pg');
+let queryData = null;
 
 const klient = new Client({
 user: "wqynvjtr",
@@ -21,7 +22,7 @@ klient.connect();
 
 app.get("/skrald", async (req, res) => {
 try {
-let queryData = await klient.query(qry);
+queryData = await klient.query(qry);
 res.json({
 "ok": true,
 "skrald": queryData.rows,
@@ -38,3 +39,8 @@ res.json({
 app.listen(port, () => {
 console.log(`Appl. lytter på http://localhost:${port}`);
 });
+
+
+function myFunction() {
+    console.log(queryData)
+  }
