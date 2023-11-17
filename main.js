@@ -16,8 +16,10 @@ rejectUnauthorized: false,
 });
 
 const qry = 'SELECT * from skrald';
+const qry2 = 'SELECT navn from skrald';
 
 klient.connect();
+
 app.get("/skrald", async (req, res) => {
 try {
 let queryData = await klient.query(qry);
@@ -33,33 +35,21 @@ res.json({
 };
 })
 
+app.get("/skraldnavn", async (req, res) => {
+    try {
+    let queryData = await klient.query(qry2);
+    res.json({
+    "ok": true,
+    "navn": queryData.rows,
+    })
+    } catch (error) {
+    res.json({
+    "ok": false,
+    "message": error.message,
+    })
+    };
+    })
 
 app.listen(port, () => {
 console.log(`Appl. lytter på http://localhost:${port}`);
 });
-
-
-
-/*
-En anden måde at gøre det på ved at bruge en connection string. Det fylder lidt
-mindre,
-men gør at man skal forstå de forskellige delelementer i selve connection
-string'en.
-Bliver typisk brugt af erfarne udviklere, da det netop fylder mindre. De første fem
-linjer
-skal stadig være med, mens resten af koden udskiftes med følgende:
-const connString = 'postgres://rhdpbdhc:Tw1Ig4dRU_shwpzDrKXjEE7S-
-WRJImzx@cornelius.db.elephantsql.com/rhdpbdhc';
-var client = new pg.Client(connString);
-client.connect(function(err) {
-if(err) {
-return console.error('could not connect to postgres', err);
-}
-client.query('SELECT food_item from food', function(err, result) {
-if(err) {
-return console.error('error running query', err);
-}
-console.log(result.rows[0]);
-client.end();
-});
-});*/
