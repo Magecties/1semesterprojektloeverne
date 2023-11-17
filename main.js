@@ -16,7 +16,6 @@ rejectUnauthorized: false,
 });
 
 const qry = 'SELECT * from skrald';
-const qry2 = 'SELECT navn from skrald';
 
 klient.connect();
 
@@ -35,20 +34,6 @@ res.json({
 };
 })
 
-app.get("/skraldnavn", async (req, res) => {
-    try {
-    let queryData = await klient.query(qry2);
-    res.json({
-    "ok": true,
-    "navn": queryData.rows,
-    })
-    } catch (error) {
-    res.json({
-    "ok": false,
-    "message": error.message,
-    })
-    };
-    })
 
 app.listen(port, () => {
 console.log(`Appl. lytter på http://localhost:${port}`);
