@@ -1,9 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 3000;
 const { Client } = require("pg");
 let pg = require('pg');
 let queryData = null;
+
+app.use(cors({  origin: '*' }));
 
 const klient = new Client({
 user: "wqynvjtr",
@@ -41,6 +44,3 @@ console.log(`Appl. lytter på http://localhost:${port}`);
 });
 
 
-function myFunction() {
-    console.log(queryData)
-  }
