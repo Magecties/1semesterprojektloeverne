@@ -32,8 +32,6 @@ const materials = [
     { name:  d.skrald[0].name, image: '/Spilbilleder/møbler.png', nedbrydningstid: d.skrald[0].nedbrydningstid, nedbrydningstidværdi: d.skrald[1].nedbrydningstidværdi },
     { name:  d.skrald[22].name, image: '/Spilbilleder/Tøj.png', nedbrydningstid: d.skrald[22].nedbrydningstid, nedbrydningstidværdi: d.skrald[1].nedbrydningstidværdi },
     
-
-    // Add more materials as needed
 ];
 
 let leftMaterial, rightMaterial;
@@ -54,17 +52,19 @@ function setMaterials() {
 }
 
 function checkAnswer(choice) {
-    if ((choice === 'higher' && rightMaterial.breakdownTime > leftMaterial.breakdownTime) ||
-        (choice === 'lower' && rightMaterial.breakdownTime < leftMaterial.breakdownTime)) {
+    if ((choice === 'higher' && rightMaterial.nedbrydningstidværdi > leftMaterial.nedbrydningstidværdi) ||
+        (choice === 'lower' && rightMaterial.nedbrydningstidværdi < leftMaterial.nedbrydningstidværdi)) {
         // Correct answer
         // Move right material to the left
         leftMaterial = rightMaterial;
         setMaterials();
     } else {
-        // Incorrect answer
-        // Handle accordingly (maybe display a message or reset the game)
-    }
-}
+          // Incorrect answer
+          alert('You are a loser!');
+          // Reset the game by calling setMaterials again
+          setMaterials();
+      }
+  }
 
 // Call setMaterials to initialize the game
 setMaterials();
