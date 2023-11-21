@@ -71,7 +71,9 @@ function buttons() {
 
 function checkAnswer(choice) {
     if ((choice === 'higher' && Number.parseInt(rightMaterial.nedbrydningstidværdi) > Number.parseInt(leftMaterial.nedbrydningstidværdi)) ||
-        (choice === 'lower' && Number.parseInt(rightMaterial.nedbrydningstidværdi) < Number.parseInt(leftMaterial.nedbrydningstidværdi))) {
+        (choice === 'lower' && Number.parseInt(rightMaterial.nedbrydningstidværdi) < Number.parseInt(leftMaterial.nedbrydningstidværdi)) ||
+        (choice === 'higher' && Number.parseInt(rightMaterial.nedbrydningstidværdi) == Number.parseInt(leftMaterial.nedbrydningstidværdi)) ||
+        (choice === 'lower' && Number.parseInt(rightMaterial.nedbrydningstidværdi) == Number.parseInt(leftMaterial.nedbrydningstidværdi))) {
         // Correct answer
         // Move right material to the left
         alert('you are correct')
