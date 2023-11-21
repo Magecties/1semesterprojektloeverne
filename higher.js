@@ -7,6 +7,8 @@ d3.json("http://localhost:3000/skrald").then(function(d){
 
     
 // Sample materials database
+// lave det her om til et loop på sigt og få sat Number.parseInt den her ind i loopet og fjern det fra checkAnswer funktionen. 
+//Billederne skal nok i et array?
 const materials = [
     { name: d.skrald[1].navn, image: '/Spilbilleder/Cigaretskoder.png', nedbrydningstid: d.skrald[1].nedbrydningstid, nedbrydningstidværdi: d.skrald[1].nedbrydningstidværdi },
     { name:  d.skrald[2].navn, image: '/Spilbilleder/Tyggegummi.png', nedbrydningstid: d.skrald[2].nedbrydningstid, nedbrydningstidværdi: d.skrald[2].nedbrydningstidværdi },
@@ -51,6 +53,9 @@ function setMaterials() {
     document.getElementById('rightImage').src = rightMaterial.image;
     document.getElementById('rightMaterial').innerText = rightMaterial.name;
     document.getElementById('rightnedbrydning').innerText = rightMaterial.nedbrydningstid;
+
+    console.log(leftMaterial);
+    console.log(rightMaterial);
 }
 
 function buttons() {
@@ -65,8 +70,8 @@ function buttons() {
 
 
 function checkAnswer(choice) {
-    if ((choice === 'higher' && rightMaterial.nedbrydningstidværdi > leftMaterial.nedbrydningstidværdi) ||
-        (choice === 'lower' && rightMaterial.nedbrydningstidværdi < leftMaterial.nedbrydningstidværdi)) {
+    if ((choice === 'higher' && Number.parseInt(rightMaterial.nedbrydningstidværdi) > Number.parseInt(leftMaterial.nedbrydningstidværdi)) ||
+        (choice === 'lower' && Number.parseInt(rightMaterial.nedbrydningstidværdi) < Number.parseInt(leftMaterial.nedbrydningstidværdi))) {
         // Correct answer
         // Move right material to the left
         alert('you are correct')
