@@ -45,18 +45,30 @@ function setMaterials() {
     rightMaterial = getRandomMaterial();
 
     document.getElementById('leftImage').src = leftMaterial.image;
-    document.getElementById('leftMaterial').innerHTML = leftMaterial.name;
+    document.getElementById('leftMaterial').innerText = leftMaterial.name;
 
     document.getElementById('rightImage').src = rightMaterial.image;
-    document.getElementById('rightMaterial').innerHTML = rightMaterial.name;
+    document.getElementById('rightMaterial').innerText = rightMaterial.name;
 }
+
+function buttons() {
+    document.getElementById('higher').onclick = function() {
+        checkAnswer('higher');
+    };
+
+    document.getElementById('lower').onclick = function() {
+        checkAnswer('lower');
+    };
+}
+
 
 function checkAnswer(choice) {
     if ((choice === 'higher' && rightMaterial.nedbrydningstidværdi > leftMaterial.nedbrydningstidværdi) ||
         (choice === 'lower' && rightMaterial.nedbrydningstidværdi < leftMaterial.nedbrydningstidværdi)) {
         // Correct answer
         // Move right material to the left
-        leftMaterial = rightMaterial;
+        alert('you are correct')
+        //leftMaterial = rightMaterial;
         setMaterials();
     } else {
           // Incorrect answer
@@ -69,6 +81,9 @@ function checkAnswer(choice) {
 // Call setMaterials to initialize the game
 setMaterials();
 
+// Set up event handlers for buttons
+buttons();
+    
     
 });
 
