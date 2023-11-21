@@ -37,6 +37,7 @@ const materials = [
 ];
 
 let leftMaterial, rightMaterial;
+let score= 0
 
 function getRandomMaterial() {
     return materials[Math.floor(Math.random() * materials.length)];
@@ -69,6 +70,7 @@ function buttons() {
 }
 
 
+
 function checkAnswer(choice) {
     if ((choice === 'higher' && Number.parseInt(rightMaterial.nedbrydningstidværdi) > Number.parseInt(leftMaterial.nedbrydningstidværdi)) ||
         (choice === 'lower' && Number.parseInt(rightMaterial.nedbrydningstidværdi) < Number.parseInt(leftMaterial.nedbrydningstidværdi)) ||
@@ -76,23 +78,33 @@ function checkAnswer(choice) {
         (choice === 'lower' && Number.parseInt(rightMaterial.nedbrydningstidværdi) == Number.parseInt(leftMaterial.nedbrydningstidværdi))) {
         // Correct answer
         // Move right material to the left
-        alert('you are correct')
+        score++;
+        displayScore(score)
+        console.log(score)
+        
         //leftMaterial = rightMaterial;
         setMaterials();
+    
     } else {
           // Incorrect answer
           alert('You are a loser!');
+          score=0
           // Reset the game by calling setMaterials again
           setMaterials();
       }
   }
+
+  //viser score
+  function displayScore(score) {
+document.getElementById('score').innerText = `Score: ${score}`;
+}
 
 // Call setMaterials to initialize the game
 setMaterials();
 
 // Set up event handlers for buttons
 buttons();
-    
+displayScore(score);
 });
 
 // d.skrald[10].navn fjern herfra
