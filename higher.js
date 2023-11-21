@@ -5,6 +5,7 @@ d3.json("http://localhost:3000/skrald").then(function(d){
     console.log(d.skrald[10].nedbrydningstidværdi < d.skrald[11].nedbrydningstidværdi);
 
 
+    
 // Sample materials database
 const materials = [
     { name: d.skrald[1].navn, image: '/Spilbilleder/Cigaretskoder.png', nedbrydningstid: d.skrald[1].nedbrydningstid, nedbrydningstidværdi: d.skrald[1].nedbrydningstidværdi },
@@ -22,7 +23,7 @@ const materials = [
     { name:  d.skrald[13].navn, image: '/Spilbilleder/Ispind.png', nedbrydningstid: d.skrald[13].nedbrydningstid, nedbrydningstidværdi: d.skrald[1].nedbrydningstidværdi },
     { name:  d.skrald[14].navn, image: '/Spilbilleder/Papkrus.png', nedbrydningstid: d.skrald[14].nedbrydningstid, nedbrydningstidværdi: d.skrald[1].nedbrydningstidværdi },
     { name:  d.skrald[15].navn, image: '/Spilbilleder/Kapsel.png', nedbrydningstid: d.skrald[15].nedbrydningstid, nedbrydningstidværdi: d.skrald[1].nedbrydningstidværdi },
-    { name:  d.skrald[16].navn, image: '/Spilbilleder/Appelsinskrald.png', nedbrydningstid: d.skrald[16].nedbrydningstid, nedbrydningstidværdi: d.skrald[1].nedbrydningstidværdi },
+    { name:  d.skrald[16].navn, image: '/Spilbilleder/Appelsinkrald.png', nedbrydningstid: d.skrald[16].nedbrydningstid, nedbrydningstidværdi: d.skrald[1].nedbrydningstidværdi },
     { name:  d.skrald[17].navn, image: '/Spilbilleder/Bananskrald.png', nedbrydningstid: d.skrald[17].nedbrydningstid, nedbrydningstidværdi: d.skrald[1].nedbrydningstidværdi },
     { name:  d.skrald[18].navn, image: '/Spilbilleder/Mælkekarton.png', nedbrydningstid: d.skrald[18].nedbrydningstid, nedbrydningstidværdi: d.skrald[1].nedbrydningstidværdi },
     { name:  d.skrald[19].navn, image: '/Spilbilleder/NylonMaterialer.png', nedbrydningstid: d.skrald[19].nedbrydningstid, nedbrydningstidværdi: d.skrald[1].nedbrydningstidværdi },
@@ -68,8 +69,9 @@ function checkAnswer(choice) {
 // Call setMaterials to initialize the game
 setMaterials();
 
-
+    
 });
 
 // d.skrald[10].navn fjern herfra
 // kør både node main.js og liveserver i to terminaler
+
