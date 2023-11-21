@@ -87,7 +87,7 @@ function checkAnswer(choice) {
     
     } else {
           // Incorrect answer
-          alert('You are a loser!');
+          alert('fucking dumme taber man');
           score=0
           // Reset the game by calling setMaterials again
           setMaterials();
