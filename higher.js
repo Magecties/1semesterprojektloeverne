@@ -46,9 +46,11 @@ function setMaterials() {
 
     document.getElementById('leftImage').src = leftMaterial.image;
     document.getElementById('leftMaterial').innerText = leftMaterial.name;
+    document.getElementById('leftnedbrydning').innerText = leftMaterial.nedbrydningstid;
 
     document.getElementById('rightImage').src = rightMaterial.image;
     document.getElementById('rightMaterial').innerText = rightMaterial.name;
+    document.getElementById('rightnedbrydning').innerText = rightMaterial.nedbrydningstid;
 }
 
 function buttons() {
