@@ -77,14 +77,25 @@ function checkAnswer(choice) {
         (choice === 'higher' && Number.parseInt(rightMaterial.nedbrydningstidværdi) == Number.parseInt(leftMaterial.nedbrydningstidværdi)) ||
         (choice === 'lower' && Number.parseInt(rightMaterial.nedbrydningstidværdi) == Number.parseInt(leftMaterial.nedbrydningstidværdi))) {
         // Correct answer
-        // Move right material to the left
         score++;
         displayScore(score)
         console.log(score)
         
-       // leftMaterial = rightMaterial;
-        setMaterials();
-    
+        leftMaterial = rightMaterial; // Move the right option to the left
+
+        // Set a new random material for the right side
+        rightMaterial = getRandomMaterial();
+
+        // Update the HTML elements with new materials
+        document.getElementById('leftImage').src = leftMaterial.image;
+        document.getElementById('leftMaterial').innerText = leftMaterial.name;
+        document.getElementById('leftnedbrydning').innerText = leftMaterial.nedbrydningstid;
+
+        document.getElementById('rightImage').src = rightMaterial.image;
+        document.getElementById('rightMaterial').innerText = rightMaterial.name;
+        document.getElementById('rightnedbrydning').innerText = rightMaterial.nedbrydningstid;
+
+
     } else {
           // Incorrect answer
           alert('fucking dumme taber man');
