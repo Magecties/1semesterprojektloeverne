@@ -82,7 +82,7 @@ function checkAnswer(choice) {
         displayScore(score)
         console.log(score)
         
-        //leftMaterial = rightMaterial;
+       // leftMaterial = rightMaterial;
         setMaterials();
     
     } else {
