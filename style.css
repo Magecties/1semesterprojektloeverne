@@ -63,6 +63,5 @@ color: black;
 }
 
 .button2:hover {
-background-color: #04AA6D;
-color: white;
+-webkit-text-fill-color: #9C8281;
 }
