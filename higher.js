@@ -95,7 +95,7 @@ function checkAnswer(choice) {
         document.getElementById('rightMaterial').innerText = rightMaterial.name;
         document.getElementById('rightnedbrydning').innerText = rightMaterial.nedbrydningstid;
 
-
+//hallo
     } else {
           // Incorrect answer
           alert('fucking dumme taber man');
