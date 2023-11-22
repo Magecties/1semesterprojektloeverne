@@ -11,8 +11,9 @@ font-family: Arial, sans-serif;
 
 .container {
 display: flex;
-padding: 30px;
-height: 100px;
+padding: 0px;
+height: 100%;
+width: 100%;
 }
 
 .text {
