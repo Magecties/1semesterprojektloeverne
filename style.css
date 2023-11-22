@@ -30,6 +30,10 @@ max-width: 100%;
 height: auto;
 
 }
+.hlimg {
+    filter: brightness(100%);
+}
+
 .button {
 background-color: #04AA6D; /* Green */
 border: none;
