@@ -48,13 +48,16 @@ function setMaterials() {
     rightMaterial = getRandomMaterial();
 
     document.getElementById('leftImage').src = leftMaterial.image;
-    document.getElementById('leftMaterial').innerHTML = leftMaterial.name + "<br>" + "har";
-    document.getElementById('leftnedbrydning').innerHTML = leftMaterial.nedbrydningstid + "s";
-    document.getElementById('beskrivelse').innerText = leftMaterial.beskrivelse;
+    document.getElementById('leftMaterial').innerHTML = leftMaterial.name;
+    document.getElementById('har').innerHTML = "har";
+    document.getElementById('leftnedbrydning').innerHTML = leftMaterial.nedbrydningstid;
+    document-getElementById('leftnedbrydningtext').innerHTML = "nedbrydningstid";
+    document.getElementById('beskrivelse').innerText = "Fordi: " + leftMaterial.beskrivelse;
 
 
     document.getElementById('rightImage').src = rightMaterial.image;
-    document.getElementById('rightMaterial').innerHTML = rightMaterial.name + "<br>" + "har";
+    document.getElementById('rightMaterial').innerHTML = rightMaterial.name + "<br>" + "har en";
+    document.getElementById('rightnedbrydning').innerHTML = "nedbryndingstid";
 
     console.log(leftMaterial);
     console.log(rightMaterial);
@@ -89,13 +92,17 @@ function checkAnswer(choice) {
 
         // Update the HTML elements with new materials
         document.getElementById('leftImage').src = leftMaterial.image;
-        document.getElementById('leftMaterial').innerHTML = leftMaterial.name + "<br>" + "har";
+        document.getElementById('leftMaterial').innerHTML = leftMaterial.name;
+        document.getElementById('har').innerHTML = "har";
         document.getElementById('leftnedbrydning').innerHTML = leftMaterial.nedbrydningstid + "s";
-        document.getElementById('beskrivelse').innerText = leftMaterial.beskrivelse;
+        document-getElementById('leftnedbrydningtext').innerHTML = "nedbrydningstid";
+        document.getElementById('beskrivelse').innerText = "Fordi:" + leftMaterial.beskrivelse;
     
     
         document.getElementById('rightImage').src = rightMaterial.image;
-        document.getElementById('rightMaterial').innerHTML = rightMaterial.name + "<br>" + "har";
+        document.getElementById('rightMaterial').innerHTML = rightMaterial.name + "<br>" + "har en";
+        document.getElementById('rightnedbrydning').innerHTML = "nedbryndingstid"
+
     } else {
           // Incorrect answer
           alert('fucking dumme taber man');
