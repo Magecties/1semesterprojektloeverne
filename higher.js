@@ -1,9 +1,9 @@
 d3.json("http://localhost:3000/skrald").then(function(d){
-    console.log(d.skrald[10]);
-    console.log(d.skrald)
-
-    console.log(d.skrald[10].nedbrydningstidværdi < d.skrald[11].nedbrydningstidværdi);
     
+    let rigtiglyd = new Audio('lyde/Correct Answer Sound Effect.mp3')
+    let forkertlyd = new Audio('lyde/Spongebob Stinky Sound Effect.mp3')
+
+
 // Sample materials database
 // lave det her om til et loop på sigt og få sat Number.parseInt den her ind i loopet og fjern det fra checkAnswer funktionen. 
 //Billederne skal nok i et array?
@@ -80,6 +80,9 @@ function checkAnswer(choice) {
         displayScore(score)
         console.log(score)
         
+        rigtiglyd.play()
+
+        
         leftMaterial = rightMaterial; // Move the right option to the left
 
         // Set a new random material for the right side
@@ -96,10 +99,12 @@ function checkAnswer(choice) {
         document.getElementById('rightImage').src = rightMaterial.image;
         document.getElementById('rightMaterial').innerHTML = rightMaterial.name;
         document.getElementById('harEn').innerHTML = "har en"
-        document.getElementById('rightnedbrydning').innerHTML = "nedbryndingstid"
+        document.getElementById('rightnedbrydning').innerHTML = "nedbrydingstid"
 
     } else {
           // Incorrect answer
+          forkertlyd.play()
+
           alert('fucking dumme taber man');
           score=0
           // Reset the game by calling setMaterials again
