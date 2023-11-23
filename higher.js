@@ -28,8 +28,8 @@ const materials = [
     { name: d.skrald[2].navn, image: '/Spilbilleder/Mælkekarton.png', nedbrydningstid: d.skrald[2].nedbrydningstid, nedbrydningstidværdi: d.skrald[2].nedbrydningstidværdi, beskrivelse: d.skrald[2].beskrivelse },
     { name: d.skrald[3].navn, image: '/Spilbilleder/NylonMaterialer.png', nedbrydningstid: d.skrald[3].nedbrydningstid, nedbrydningstidværdi: d.skrald[3].nedbrydningstidværdi, beskrivelse: d.skrald[3].beskrivelse },
     { name: d.skrald[19].navn, image: '/Spilbilleder/Mobiltelefon.png', nedbrydningstid: d.skrald[19].nedbrydningstid, nedbrydningstidværdi: d.skrald[19].nedbrydningstidværdi, beskrivelse: d.skrald[19].beskrivelse },
-    { name: d.skrald[20].navn, image: '/Spilbilleder/Cykel.png', nedbrydningstid: d.skrald[20].nedbrydningstid, nedbrydningstidværdi: d.skrald[20].nedbrydningstidværdi, beskrivelse: d.skrald[20].beskrivelse },
-    { name: d.skrald[21].navn, image: '/Spilbilleder/møbler.png', nedbrydningstid: d.skrald[21].nedbrydningstid, nedbrydningstidværdi: d.skrald[21].nedbrydningstidværdi, beskrivelse: d.skrald[21].beskrivelse },
+    { name: d.skrald[21].navn, image: '/Spilbilleder/Cykel.png', nedbrydningstid: d.skrald[21].nedbrydningstid, nedbrydningstidværdi: d.skrald[21].nedbrydningstidværdi, beskrivelse: d.skrald[21].beskrivelse },
+    { name: d.skrald[20].navn, image: '/Spilbilleder/møbler.png', nedbrydningstid: d.skrald[20].nedbrydningstid, nedbrydningstidværdi: d.skrald[20].nedbrydningstidværdi, beskrivelse: d.skrald[20].beskrivelse },
     { name: d.skrald[22].navn, image: '/Spilbilleder/Tøj.png', nedbrydningstid: d.skrald[22].nedbrydningstid, nedbrydningstidværdi: d.skrald[22].nedbrydningstidværdi, beskrivelse: d.skrald[22].beskrivelse },
 ];
 
