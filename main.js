@@ -38,7 +38,6 @@ res.json({
 };
 })
 
-
 app.listen(port, () => {
 console.log(`Appl. lytter på http://localhost:${port}`);
 });
