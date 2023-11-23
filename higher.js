@@ -3,8 +3,6 @@ d3.json("http://localhost:3000/skrald").then(function(d){
     console.log(d.skrald)
 
     console.log(d.skrald[10].nedbrydningstidværdi < d.skrald[11].nedbrydningstidværdi);
-
-
     
 // Sample materials database
 // lave det her om til et loop på sigt og få sat Number.parseInt den her ind i loopet og fjern det fra checkAnswer funktionen. 
@@ -33,7 +31,6 @@ const materials = [
     { name: d.skrald[20].navn, image: '/Spilbilleder/Cykel.png', nedbrydningstid: d.skrald[20].nedbrydningstid, nedbrydningstidværdi: d.skrald[20].nedbrydningstidværdi, beskrivelse: d.skrald[20].beskrivelse },
     { name: d.skrald[21].navn, image: '/Spilbilleder/møbler.png', nedbrydningstid: d.skrald[21].nedbrydningstid, nedbrydningstidværdi: d.skrald[21].nedbrydningstidværdi, beskrivelse: d.skrald[21].beskrivelse },
     { name: d.skrald[22].navn, image: '/Spilbilleder/Tøj.png', nedbrydningstid: d.skrald[22].nedbrydningstid, nedbrydningstidværdi: d.skrald[22].nedbrydningstidværdi, beskrivelse: d.skrald[22].beskrivelse },
-    
 ];
 
 let leftMaterial, rightMaterial;
@@ -54,13 +51,11 @@ function setMaterials() {
     document.getElementById('leftnedbrydningtext').innerHTML = "nedbrydningstid";
     document.getElementById('beskrivelse').innerText = "Fakta: " + leftMaterial.beskrivelse;
 
-
     document.getElementById('rightImage').src = rightMaterial.image;
     document.getElementById('rightMaterial').innerHTML = rightMaterial.name;
     document.getElementById('harEn').innerHTML = "har en";
     document.getElementById('rightnedbrydning').innerHTML = "nedbryndingstid";
     
-
     console.log(leftMaterial);
     console.log(rightMaterial);
 }
@@ -74,8 +69,6 @@ function buttons() {
         checkAnswer('lower');
     };
 }
-
-
 
 function checkAnswer(choice) {
     if ((choice === 'higher' && Number.parseInt(rightMaterial.nedbrydningstidværdi) > Number.parseInt(leftMaterial.nedbrydningstidværdi)) ||
@@ -99,7 +92,6 @@ function checkAnswer(choice) {
         document.getElementById('leftnedbrydning').innerHTML = leftMaterial.nedbrydningstid + "s";
         document.getElementById('leftnedbrydningtext').innerHTML = "nedbrydningstid";
         document.getElementById('beskrivelse').innerText = "Fakta:" + leftMaterial.beskrivelse;
-    
     
         document.getElementById('rightImage').src = rightMaterial.image;
         document.getElementById('rightMaterial').innerHTML = rightMaterial.name;
