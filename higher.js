@@ -54,7 +54,7 @@ function setMaterials() {
     document.getElementById('rightImage').src = rightMaterial.image;
     document.getElementById('rightMaterial').innerHTML = rightMaterial.name;
     document.getElementById('harEn').innerHTML = "har en";
-    document.getElementById('rightnedbrydning').innerHTML = "nedbryndingstid";
+    document.getElementById('rightnedbrydning').innerHTML = "nedbrydnigstid";
     
     console.log(leftMaterial);
     console.log(rightMaterial);
