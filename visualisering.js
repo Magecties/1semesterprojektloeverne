@@ -8,27 +8,33 @@ const padding = 40;
 
     d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
       const svg = d3.select("body").append("svg").attr("width", w).attr("height", h).style("margin-top", "20px");
+
+      console.log(d.skraldfarlighed[1].nedbrydningstid);
+
+      let nedbrydningstidtal = Number.parseInt(d.skraldfarlighed[1].nedbrydningstid);
+
+      console.log(nedbrydningstidtal);
+
       
-      console.log(d);
       const xScale = d3.scaleLinear()
-        .domain([0, d3.max(d, d => d.nedbrydningstid)])
+        .domain([0, d3.max(d, d => d.nedbrydningstidtal)])
         .range([padding, w - padding]);
   
       const yScale = d3.scaleLinear()
-        .domain([0, d3.max(d, d => d.Farlighedsfaktor.Farlighedsniveau)])
+        .domain([0, d3.max(d, d => farlighedsniveautal)])
         .range([h - padding, padding]);
   
       svg.selectAll("circle")
         .data(d)
         .enter()
         .append("circle")
-        .attr("cx", d => xScale(d.nedbrydningstid))
+        .attr("cx", d => xScale(nedbrydningstidtal))
         .attr("cy", h - padding) // Startpunkt
         .attr("r", 2.5)
         .transition() // Start på transition
         .duration(1000)
         .delay((d, i) => i * 15)
-        .attr("cy", d => yScale(d.Farlighedsfaktor.Farlighedsniveau)); // Slutpunkt
+        .attr("cy", d => yScale(farlighedsniveautal)); // Slutpunkt
   
       // Rest of your code for axes, labels, and title...
 

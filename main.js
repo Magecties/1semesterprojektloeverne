@@ -44,7 +44,7 @@ app.get("/skraldfarlighed", async (req, res) => {
     queryData = await klient.query(qry2);
     res.json({
     "ok": true,
-    "*": queryData.rows,
+    "skraldfarlighed": queryData.rows,
     })
     } catch (error) {
     res.json({
