@@ -9,11 +9,21 @@ const padding = 40;
     d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
       const svg = d3.select("body").append("svg").attr("width", w).attr("height", h).style("margin-top", "20px");
 
-      console.log(d.skraldfarlighed[1].nedbrydningstid);
+      let nedbrydningstidtal = []
+      let farlighedsniveautal =[]
+        for  (let i = 0; i < d.skraldfarlighed.length; i++){
+         nedbrydningstidtal.push(parseInt(d.skraldfarlighed[i].nedbrydningstidværdi));
+         farlighedsniveautal.push(parseInt(d.skraldfarlighed[i].farligfaktor_id))
 
-      let nedbrydningstidtal = Number.parseInt(d.skraldfarlighed[1].nedbrydningstid);
+        
+      }
+console.log(nedbrydningstidtal)
+console.log(farlighedsniveautal)
+    //  console.log(d.skraldfarlighed[1].nedbrydningstid);
 
-      console.log(nedbrydningstidtal);
+    //  let nedbrydningstidtal = Number.parseInt(d.skraldfarlighed[1].nedbrydningstid);
+
+    //  console.log(nedbrydningstidtal);
 
       
       const xScale = d3.scaleLinear()
