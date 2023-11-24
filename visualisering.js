@@ -9,42 +9,36 @@ const padding = 40;
     d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
       const svg = d3.select("body").append("svg").attr("width", w).attr("height", h).style("margin-top", "20px");
 
-      let nedbrydningstidtal = []
-      let farlighedsniveautal =[]
+    
+      let resultat= []
         for  (let i = 0; i < d.skraldfarlighed.length; i++){
-         nedbrydningstidtal.push(parseInt(d.skraldfarlighed[i].nedbrydningstidværdi));
-         farlighedsniveautal.push(parseInt(d.skraldfarlighed[i].farligfaktor_id))
+         resultat.push([parseInt(d.skraldfarlighed[i].nedbrydningstidværdi),parseInt(d.skraldfarlighed[i].farligfaktor_id)])
 
         
       }
-console.log(nedbrydningstidtal)
-console.log(farlighedsniveautal)
-    //  console.log(d.skraldfarlighed[1].nedbrydningstid);
+console.log(resultat)
 
-    //  let nedbrydningstidtal = Number.parseInt(d.skraldfarlighed[1].nedbrydningstid);
-
-    //  console.log(nedbrydningstidtal);
 
       
       const xScale = d3.scaleLinear()
-        .domain([0, d3.max(d, d => d.nedbrydningstidtal)])
+        .domain([0,  d3.max(resultat,function(d){return d[0]})])
         .range([padding, w - padding]);
   
       const yScale = d3.scaleLinear()
-        .domain([0, d3.max(d, d => farlighedsniveautal)])
+        .domain([0, d3.max(resultat,function(d){return d[1]})])
         .range([h - padding, padding]);
   
       svg.selectAll("circle")
-        .data(d)
+        .data(resultat)
         .enter()
         .append("circle")
-        .attr("cx", d => xScale(nedbrydningstidtal))
+        .attr("cx", d => xScale(d[0]))
         .attr("cy", h - padding) // Startpunkt
         .attr("r", 2.5)
         .transition() // Start på transition
         .duration(1000)
-        .delay((d, i) => i * 15)
-        .attr("cy", d => yScale(farlighedsniveautal)); // Slutpunkt
+        .delay((d) => d[0] * 300)
+        .attr("cy", d => yScale(d[1])); // Slutpunkt
   
       // Rest of your code for axes, labels, and title...
 
@@ -73,7 +67,7 @@ console.log(farlighedsniveautal)
         .attr("text-anchor", "end")
         .attr("x", w)
         .attr("y", h - 50)
-        .text("Song number");
+        .text("Nedbrydningstid");
 
     // Append y-axis label
     svg.append("text")
@@ -82,7 +76,7 @@ console.log(farlighedsniveautal)
         .attr("y", 50)
         .attr("dy", ".75em")
         .attr("transform", "rotate(-90)")
-        .text("Times played");
+        .text("Farlighedsfaktor");
 
     // Append title
     svg.append("text")
@@ -90,7 +84,7 @@ console.log(farlighedsniveautal)
         .attr("y", 30)
         .attr("text-anchor", "middle")
         .style("font-size", "24px")
-        .text("Most played songs");
+        .text("Farlighed");
 
 
 
