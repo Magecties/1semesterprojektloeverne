@@ -20,6 +20,7 @@ rejectUnauthorized: false,
 });
 
 const qry = 'SELECT * from skrald';
+const qry2 = 'SELECT * from Farlighedsfaktor';
 
 klient.connect();
 
@@ -37,6 +38,20 @@ res.json({
 })
 };
 })
+
+app.get("/farlighedsfaktor", async (req, res) => {
+    try {
+    queryData = await klient.query(qry2);
+    res.json({
+    "ok": true,
+    "farlighedsniveau": queryData.rows,
+    })
+    } catch (error) {
+    res.json({
+    "ok": false,
+    "message": error.message,
+    })
+    }});
 
 app.listen(port, () => {
 console.log(`Appl. lytter på http://localhost:${port}`);

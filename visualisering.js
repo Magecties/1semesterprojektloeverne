@@ -6,18 +6,16 @@ const padding = 40;
 
 
 
-function data() {
-    d3.json("http://localhost:3000/skrald").then(function (d) {
+    d3.json("http://localhost:3000/skrald", "http://localhost:3000/farlighedsfaktor").then(function (d) {
       const svg = d3.select("body").append("svg").attr("width", w).attr("height", h).style("margin-top", "20px");
-  
       console.log(d.skrald);
       
       const xScale = d3.scaleLinear()
-        .domain([0, d3.max(data.skrald, d => d.nedbrydningstid)])
+        .domain([0, d3.max(d.skrald, d => d.nedbrydningstid)])
         .range([padding, w - padding]);
   
       const yScale = d3.scaleLinear()
-        .domain([0, d3.max(data.skrald, d => d.Farlighedsfaktor.Farlighedsniveau)])
+        .domain([0, d3.max(d.skrald, d => d.Farlighedsfaktor.Farlighedsniveau)])
         .range([h - padding, padding]);
   
       svg.selectAll("circle")
@@ -33,8 +31,8 @@ function data() {
         .attr("cy", d => yScale(d.Farlighedsfaktor.Farlighedsniveau)); // Slutpunkt
   
       // Rest of your code for axes, labels, and title...
-    });
-  
+
+      console.log(d.skrald);
   
 
 
@@ -80,6 +78,6 @@ function data() {
 
 
 
+    });
 
 
-}
