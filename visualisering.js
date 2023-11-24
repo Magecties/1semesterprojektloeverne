@@ -6,20 +6,20 @@ const padding = 40;
 
 
 
-    d3.json("http://localhost:3000/skrald", "http://localhost:3000/farlighedsfaktor").then(function (d) {
+    d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
       const svg = d3.select("body").append("svg").attr("width", w).attr("height", h).style("margin-top", "20px");
-      console.log(d.skrald);
       
+      console.log(d);
       const xScale = d3.scaleLinear()
-        .domain([0, d3.max(d.skrald, d => d.nedbrydningstid)])
+        .domain([0, d3.max(d, d => d.nedbrydningstid)])
         .range([padding, w - padding]);
   
       const yScale = d3.scaleLinear()
-        .domain([0, d3.max(d.skrald, d => d.Farlighedsfaktor.Farlighedsniveau)])
+        .domain([0, d3.max(d, d => d.Farlighedsfaktor.Farlighedsniveau)])
         .range([h - padding, padding]);
   
       svg.selectAll("circle")
-        .data(data.skrald)
+        .data(d)
         .enter()
         .append("circle")
         .attr("cx", d => xScale(d.nedbrydningstid))
@@ -32,7 +32,7 @@ const padding = 40;
   
       // Rest of your code for axes, labels, and title...
 
-      console.log(d.skrald);
+      
   
 
 

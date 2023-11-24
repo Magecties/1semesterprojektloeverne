@@ -20,7 +20,7 @@ rejectUnauthorized: false,
 });
 
 const qry = 'SELECT * from skrald';
-const qry2 = 'SELECT * from Farlighedsfaktor';
+const qry2 = 'SELECT * from skraldfarlighed';
 
 klient.connect();
 
@@ -39,12 +39,12 @@ res.json({
 };
 })
 
-app.get("/farlighedsfaktor", async (req, res) => {
+app.get("/skraldfarlighed", async (req, res) => {
     try {
     queryData = await klient.query(qry2);
     res.json({
     "ok": true,
-    "farlighedsniveau": queryData.rows,
+    "*": queryData.rows,
     })
     } catch (error) {
     res.json({
