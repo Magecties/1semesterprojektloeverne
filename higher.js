@@ -2,9 +2,7 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
   let rigtiglyd = new Audio("lyde/Correct Answer Sound Effect.mp3");
   let forkertlyd = new Audio("lyde/Spongebob Stinky Sound Effect.mp3");
 
-  // Sample materials database
-  // lave det her om til et loop på sigt og få sat Number.parseInt den her ind i loopet og fjern det fra checkAnswer funktionen.
-  //Billederne skal nok i et array?
+  // Her laves vores array af objekter
   const materials = [
     {
       name: d.skrald[0].navn,
@@ -169,13 +167,15 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
     },
   ];
 
+  //Der dannes to variable som venstre og højre materiale og scoren sættes til 0.
   let leftMaterial, rightMaterial;
   let score = 0;
 
+  //Funktion der tager et tilfældigt objekt i vores array.
   function getRandomMaterial() {
     return materials[Math.floor(Math.random() * materials.length)];
   }
-
+  //Funktion der indsætter det tilfældige venstre og højre materiale.
   function setMaterials() {
     leftMaterial = getRandomMaterial();
     rightMaterial = getRandomMaterial();
@@ -194,11 +194,8 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
     document.getElementById("rightMaterial").innerHTML = rightMaterial.name;
     document.getElementById("harEn").innerHTML = "har en";
     document.getElementById("rightnedbrydning").innerHTML = "nedbrydningstid";
-
-    console.log(leftMaterial);
-    console.log(rightMaterial);
   }
-
+  //Knapperne til "higher" eller "lower".
   function buttons() {
     document.getElementById("higher").onclick = function () {
       checkAnswer("higher");
@@ -208,7 +205,7 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
       checkAnswer("lower");
     };
   }
-
+  //Funktion, der tjekker om svaret er korrekt eller forkert
   function checkAnswer(choice) {
     if (
       (choice === "higher" &&
@@ -224,19 +221,17 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
         Number.parseInt(rightMaterial.nedbrydningstidværdi) ==
           Number.parseInt(leftMaterial.nedbrydningstidværdi))
     ) {
-      // Correct answer
+      //Udfaldet ved korrekt svar
       score++;
       displayScore(score);
       console.log(score);
-
       rigtiglyd.play();
 
-      leftMaterial = rightMaterial; // Move the right option to the left
-
-      // Set a new random material for the right side
+      //Rykker højre materiale til venstre og vælger et nyt tilfældigt materiale til højre.
+      leftMaterial = rightMaterial;
       rightMaterial = getRandomMaterial();
 
-      // Update the HTML elements with new materials
+      //De nye materialer opdateres
       document.getElementById("leftImage").src = leftMaterial.image;
       document.getElementById("leftMaterial").innerHTML = leftMaterial.name;
       document.getElementById("har").innerHTML = "har";
@@ -251,13 +246,13 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
       document.getElementById("rightMaterial").innerHTML = rightMaterial.name;
       document.getElementById("harEn").innerHTML = "har en";
       document.getElementById("rightnedbrydning").innerHTML = "nedbrydingstid";
-    } else {
-      // Incorrect answer
+    }
+    //Udfaldet ved forkert svar
+    else {
       forkertlyd.play();
-
-      alert("fucking dumme taber man");
+      alert("Desværre, prøv igen");
+      //Score sættes til 0 og materialerne sættes på ny.
       score = 0;
-      // Reset the game by calling setMaterials again
       setMaterials();
     }
   }
@@ -267,13 +262,10 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
     document.getElementById("score").innerText = `Score: ${score}`;
   }
 
-  // Call setMaterials to initialize the game
+  //Starter spillet
   setMaterials();
 
-  // Set up event handlers for buttons
+  //Event handler og visning af score
   buttons();
   displayScore(score);
 });
-
-// d.skrald[10].navn fjern herfra
-// kør både node main.js og liveserver i to terminaler
