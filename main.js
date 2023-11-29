@@ -54,7 +54,7 @@ app.get("/skraldfarlighed", async (req, res) => {
     }});
 
 app.listen(port, () => {
-console.log(`Appl. lytter på http://localhost:${port}`);
+console.log(`Appl. lytter på https://laerdomsloverne-projekt.onrender.com/:${port}`);
 });
 
 
