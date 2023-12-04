@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <title>Visualisering</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -34,8 +35,16 @@
     <h1 style="text-align: center; padding-top: 20px">
       Hvor farligt er affaldet egentligt i naturen?
     </h1>
+    <!--tooltip til hover-->
+    <div id="tooltip" class="hidden">
+      <p><strong> </strong></p>
+      <p><span id="value"></span></p>
+      <p><strong> </strong></p>
+      <p><span id="nedbrydningText"></span></p>
+    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.js"></script>
+
     <script src="visualisering.js"></script>
   </body>
 </html>
