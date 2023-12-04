@@ -151,3 +151,13 @@ img {
   font-size: 16px;
   line-height: 20px;
 }
+/*farve skift på hover*/
+circle:hover {
+  fill: #9c8281;
+}
+/*forklarende text til visuialisering*/
+#ForklarendeText {
+  position: absolute;
+  left: 20%;
+  top: 90%;
+}
