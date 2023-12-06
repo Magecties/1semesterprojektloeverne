@@ -11,7 +11,7 @@ body {
 /* header for alle html*/
 .header {
   background-color: #000000;
-  padding: 25px;
+  padding: 26px;
   text-align: center;
 }
 /*logo i header*/
@@ -70,7 +70,6 @@ body {
 img {
   max-width: 100%;
   height: auto;
-  object-fit: contain;
 }
 .hlimg {
   filter: brightness(75%);
