@@ -55,5 +55,5 @@ app.get("/skraldfarlighed", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Appl. lytter på http://localhost:${port}`);
+  console.log(`fake magnus lytter på http://localhost:${port}`);
 });
