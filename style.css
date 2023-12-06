@@ -162,10 +162,6 @@ circle:hover {
   top: 90%;
 }
 
-
-
-
-
 /* modalen (baggrund) */
 .modal {
   display: none; /* gemt */
@@ -173,11 +169,11 @@ circle:hover {
   z-index: 1; /* sidder øverst */
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   overflow: auto; /* scroll */
-  background-color: rgb(0,0,0); /* fallback farve */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* fallback farve */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal indhold/Box */
@@ -206,7 +202,7 @@ circle:hover {
   cursor: pointer;
 }
 
-.restartspilknap{
+.restartspilknap {
   background-color: #05f539;
   color: rgb(255, 255, 255);
   padding: 10px 35px;
@@ -214,4 +210,11 @@ circle:hover {
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
+}
+
+/*kategori text box*/
+.kategoriText {
+  position: absolute;
+  top: 35%;
+  left: 80%;
 }

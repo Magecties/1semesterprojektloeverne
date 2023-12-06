@@ -18,6 +18,7 @@ d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
       parseInt(d.skraldfarlighed[i].farligfaktor_id),
       d.skraldfarlighed[i].navn,
       d.skraldfarlighed[i].nedbrydningstid,
+      parseInt(d.skraldfarlighed[i].skralde_kat_id),
     ]);
   }
 
@@ -84,6 +85,21 @@ d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
     .style("font-size", "24px")
     .text("Farlighed");
 
+  let color = d3
+    .scaleOrdinal()
+    .domain([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    .range([
+      "#2ECC71",
+      "#3498DB",
+      "#FAD7A0",
+      "#138D75 ",
+      "#CCD1D1",
+      "#A569BD",
+      "#CA6F1E",
+      "#E74C3C",
+      "#17202A",
+    ]);
+
   const circles = svg
     .selectAll("circle")
     .data(resultat)
@@ -91,7 +107,10 @@ d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
     .append("circle")
     .attr("cx", (d) => xScale(d[0]))
     .attr("cy", h - padding) // Startpunkt
-    .attr("r", 4)
+    .attr("r", 5)
+    .style("fill", function (d) {
+      return color(d[4]);
+    })
     .transition() // Start på transition
     .duration(1000)
     .delay((d) => d[0] * 300)
@@ -125,4 +144,34 @@ d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
     });
     this.addEventListener("mouseout", handleMouseOut);
   });
+
+  const kategori = [
+    "Maddaffald",
+    "Papir",
+    "Pap",
+    "Glas",
+    "Metal",
+    "Plast",
+    "Mad og Drikkekartoner",
+    "Farligt affald",
+    "Restaffald",
+  ];
+  const colors = [
+    "#2ECC71",
+    "#3498DB",
+    "#FAD7A0",
+    "#138D75",
+    "#CCD1D1",
+    "#A569BD",
+    "#CA6F1E",
+    "#E74C3C",
+    "#17202A",
+  ];
+  let katBox = document.getElementById("katBox");
+  for (let i = 0; i < kategori.length; i++) {
+    let span = document.createElement("span");
+    span.innerHTML += "- " + kategori[i] + "<br>";
+    span.style.color = colors[i % colors.length];
+    katBox.appendChild(span);
+  }
 });
