@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = 3000;
+// const port = 3000;
+const PORT = process.env.PORT || 3030;
 const { Client } = require("pg");
 let pg = require("pg");
 let queryData = null;
