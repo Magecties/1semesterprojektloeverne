@@ -1,10 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-// const port = 3000;
+const port = 3000;
 
+/*
 // ny port
 const PORT = process.env.PORT || 3030;
+*/
 const { Client } = require("pg");
 let pg = require("pg");
 let queryData = null;
@@ -57,13 +59,13 @@ app.get("/skraldfarlighed", async (req, res) => {
   }
 });
 
+/*
 // ny port
 app.listen(PORT, () => {
   console.log(`magnus har fikset det og lytter på ${PORT}`);
 });
+*/
 
-/*
 app.listen(port, () => {
   console.log(`fake magnus lytter på http://localhost:${port}`);
 });
-*/
