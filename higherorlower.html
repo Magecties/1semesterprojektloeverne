@@ -27,18 +27,14 @@
       </nav>
     </header>
 
-    <div class="container">
+    <div class="container" style="display: flex; width: 100vw; height: 100vh">
       <div class="left">
         <img
           id="leftImage"
           class="hlimg"
           src=""
           alt="Left Image"
-          style="
-            background-size: cover;
-            background-position: left;
-            margin-top: 0;
-          "
+          style="width: 50vw; height: auto; overflow: hidden"
         />
         <p
           id="leftMaterial"
@@ -110,11 +106,7 @@
           class="hlimg"
           src=""
           alt="Right Image"
-          style="
-            background-size: cover;
-            background-position: right;
-            margin-top: 0;
-          "
+          style="width: 50vw; height: auto; overflow: hidden"
         />
         <p
           id="rightMaterial"
@@ -194,26 +186,20 @@
       >
         score
       </p>
-     
 
-<!-- modal så popup til spil når man taber -->
-<div id="myModal" class="modal">
-
-  <!-- alt content i modal -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p id="undertekst"></p>
-    <p id="scoremodal">
-        score
-      </p>
-      <img id="under" alt="">
-      <br>
-    <button id="restartspil" class="restartspilknap">prøv igen;-I</button>
-  </div>
-
-</div>
-</div>
-   
+      <!-- modal så popup til spil når man taber -->
+      <div id="myModal" class="modal">
+        <!-- alt content i modal -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="undertekst"></p>
+          <p id="scoremodal">score</p>
+          <img id="under" alt="" />
+          <br />
+          <button id="restartspil" class="restartspilknap">prøv igen;-I</button>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
     <script src="higher.js"></script>
