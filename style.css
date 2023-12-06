@@ -161,3 +161,57 @@ circle:hover {
   left: 20%;
   top: 90%;
 }
+
+
+
+
+
+/* modalen (baggrund) */
+.modal {
+  display: none; /* gemt */
+  position: fixed; /* så den ikke flytter sig */
+  z-index: 1; /* sidder øverst */
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; /* scroll */
+  background-color: rgb(0,0,0); /* fallback farve */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal indhold/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% fra top og centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* can være mere eller mindre alt efter skærm */
+  text-align: center;
+}
+
+/* lukke knappen */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* hover  til luk*/
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.restartspilknap{
+  background-color: #05f539;
+  color: rgb(255, 255, 255);
+  padding: 10px 35px;
+  border: none;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
