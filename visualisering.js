@@ -1,5 +1,5 @@
-const w = 700;
-const h = 300;
+const w = 900;
+const h = 450;
 const padding = 40;
 
 d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
@@ -8,16 +8,18 @@ d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
     .append("svg")
     .attr("width", w)
     .attr("height", h)
-    .style("margin-top", "20px");
+    .style("margin-top", "2.5%")
+    .style("margin-left", "17%");
 
   let resultat = [];
   for (let i = 0; i < d.skraldfarlighed.length; i++) {
     resultat.push([
       parseInt(d.skraldfarlighed[i].nedbrydningstidværdi),
       parseInt(d.skraldfarlighed[i].farligfaktor_id),
+      d.skraldfarlighed[i].navn,
+      d.skraldfarlighed[i].nedbrydningstid,
     ]);
   }
-  console.log(resultat);
 
   const xScale = d3
     .scaleLinear()
@@ -39,23 +41,8 @@ d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
     ])
     .range([h - padding, padding]);
 
-  svg
-    .selectAll("circle")
-    .data(resultat)
-    .enter()
-    .append("circle")
-    .attr("cx", (d) => xScale(d[0]))
-    .attr("cy", h - padding) // Startpunkt
-    .attr("r", 2.5)
-    .transition() // Start på transition
-    .duration(1000)
-    .delay((d) => d[0] * 300)
-    .attr("cy", (d) => yScale(d[1])); // Slutpunkt
-
-  // Rest of your code for axes, labels, and title...
-
   // Definere akserne
-  const xAxis = d3.axisBottom().scale(xScale).ticks(5);
+  const xAxis = d3.axisBottom().scale(xScale).ticks(10);
   const yAxis = d3.axisLeft().scale(yScale).ticks(5);
 
   // Lægge akserne til SVG-elementet:
@@ -92,8 +79,50 @@ d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
   svg
     .append("text")
     .attr("x", w / 2)
-    .attr("y", 30)
+    .attr("y", 20)
     .attr("text-anchor", "middle")
     .style("font-size", "24px")
     .text("Farlighed");
+
+  const circles = svg
+    .selectAll("circle")
+    .data(resultat)
+    .enter()
+    .append("circle")
+    .attr("cx", (d) => xScale(d[0]))
+    .attr("cy", h - padding) // Startpunkt
+    .attr("r", 4)
+    .transition() // Start på transition
+    .duration(1000)
+    .delay((d) => d[0] * 300)
+    .attr("cy", (d) => yScale(d[1])); // Slutpunkt
+
+  function handleMouseOver(d) {
+    let xPosition = parseFloat(d3.select(this).attr("cx"));
+    let yPosition = parseFloat(d3.select(this).attr("cy"));
+
+    d3.select("#tooltip")
+      .style("left", xPosition + 280 + "px")
+      .style("top", yPosition + 180 + "px")
+      .select("#value")
+      .text("Navn: " + d[2]);
+    d3.select("#tooltip")
+      .select("#nedbrydningText")
+      .text("Nedbrydningstid: " + d[3]);
+
+    d3.select("#tooltip").classed("hidden", false);
+  }
+
+  // Function to handle mouseout event
+  function handleMouseOut() {
+    d3.select("#tooltip").classed("hidden", true);
+  }
+
+  // Attach event listeners using native JavaScript
+  circles.each(function (d) {
+    this.addEventListener("mouseover", function () {
+      handleMouseOver.call(this, d);
+    });
+    this.addEventListener("mouseout", handleMouseOut);
+  });
 });
