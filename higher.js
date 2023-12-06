@@ -224,7 +224,7 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
       //Udfaldet ved korrekt svar
       score++;
       displayScore(score);
-      displayScoreModal(score)
+      displayScoreModal(score);
       console.log(score);
       rigtiglyd.play();
 
@@ -250,45 +250,48 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
     }
     //Udfaldet ved forkert svar
     else {
-
       // billeder til modalet der kommer alt efter hvor høj en score man har, her ændrer vi bare src til at være noget andet alt efter score.
       // vi starter med at lave en const der altid henter vores image med id under og så ændret vi den i vores if sætninger
       // vi gør det samme på teksten
-      const imageunder = document.getElementById('under');
-      const tekstunder = document.getElementById('undertekst');
+      const imageunder = document.getElementById("under");
+      const tekstunder = document.getElementById("undertekst");
 
-      if (score < 5){
-        imageunder.src = 'https://media.giphy.com/media/JyGUoHu2my7Ze/giphy.gif'
-        console.log("score under 5")
-        tekstunder.innerHTML = "shit en dårlig score, det kan du fandme gøre bedre dumme taber svin motherfucker taber"
+      if (score < 5) {
+        imageunder.src =
+          "https://media.giphy.com/media/JyGUoHu2my7Ze/giphy.gif";
+        console.log("score under 5");
+        tekstunder.innerHTML =
+          "shit en dårlig score, det kan du fandme gøre bedre dumme taber svin motherfucker taber";
+      } else if (score < 10) {
+        imageunder.src =
+          "https://media.giphy.com/media/jp313yHGzTDBbw5Tg6/giphy.gif";
+        console.log("score under 10");
+        tekstunder.innerHTML =
+          "okay måske prøvede du lidt mere men stadig lort score";
+      } else if (score < 25) {
+        imageunder.src = "https://tenor.com/XgNJ.gif";
+        console.log("score under 25");
+        tekstunder.innerHTML =
+          "WOW nu begynder det at ligne noget.... prøv at se om du kan nå 50?";
+      } else if (score < 50) {
+        imageunder.src =
+          "https://media.giphy.com/media/2w6I6nCyf5rmy5SHBy/giphy.gif";
+        console.log("score under 50");
+        tekstunder.innerHTML =
+          "ej okay nu gad vi ikke lave flere beskeder men du er ret god eller noget.... 100???";
+      } else if (score > 100) {
+        imageunder.src = "https://tenor.com/l26Qn2ubVsw.gif";
+        console.log("score over 100");
+        tekstunder.innerHTML =
+          "what er du en motherfucking skraldegud eller hvad holy wtf motherfucking fuck fuck fuck shit du er god. Tak for at du spillede, måske lærte du også noget om skrald";
       }
-      else if (score < 10) {
-        imageunder.src = 'https://media.giphy.com/media/jp313yHGzTDBbw5Tg6/giphy.gif'
-       console.log("score under 10")
-       tekstunder.innerHTML = "okay måske prøvede du lidt mere men stadig lort score"
-      }
-      else if (score < 25) {
-        imageunder.src = 'https://tenor.com/XgNJ.gif'
-        console.log("score under 25")
-        tekstunder.innerHTML = "WOW nu begynder det at ligne noget.... prøv at se om du kan nå 50?"
-      }
-      else if (score < 50) {
-        imageunder.src = 'https://media.giphy.com/media/2w6I6nCyf5rmy5SHBy/giphy.gif'
-        console.log("score under 50")
-        tekstunder.innerHTML = "ej okay nu gad vi ikke lave flere beskeder men du er ret god eller noget.... 100???"
-      }
-      else if (score > 100) {
-        imageunder.src = 'https://tenor.com/l26Qn2ubVsw.gif'
-        console.log("score over 100")
-        tekstunder.innerHTML = "what er du en motherfucking skraldegud eller hvad holy wtf motherfucking fuck fuck fuck shit du er god. Tak for at du spillede, måske lærte du også noget om skrald"
-      }
-
 
       forkertlyd.play();
       modal.style.display = "block";
       //Score sættes til 0 og materialerne sættes på ny.
       score = 0;
       setMaterials();
+      displayScore(score);
     }
   }
 
@@ -304,38 +307,32 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
   buttons();
   displayScore(score);
 
-  displayScoreModal(score)
+  displayScoreModal(score);
 
   // få modalen
-let modal = document.getElementById("myModal");
+  let modal = document.getElementById("myModal");
 
+  // få span elementet der er et kryds i hjørnet
+  let span = document.getElementsByClassName("close")[0];
 
-// få span elementet der er et kryds i hjørnet
-let span = document.getElementsByClassName("close")[0];
-
-
-// når man trykker på span krydset i højre hjørne lukkes den
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// hvis man trykker udenfor vinduet lukker den
-window.onclick = function(event) {
-  if (event.target == modal) {
+  // når man trykker på span krydset i højre hjørne lukkes den
+  span.onclick = function () {
     modal.style.display = "none";
+  };
+
+  // hvis man trykker udenfor vinduet lukker den
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  // når man trykker restart gemmer den bare modalen
+  restartspil.onclick = function () {
+    modal.style.display = "none";
+  };
+  // funktion der viser scoren fra spiller i selve modalen, vi henter html elemmentet med id'et scoremodal og sætter det til at være "score" + vores score
+  function displayScoreModal(score) {
+    document.getElementById("scoremodal").innerText = `Score: ${score}`;
   }
-}
-
-// når man trykker restart gemmer den bare modalen
-restartspil.onclick = function() {
-  modal.style.display = "none";
-
-}
-// funktion der viser scoren fra spiller i selve modalen, vi henter html elemmentet med id'et scoremodal og sætter det til at være "score" + vores score
-function displayScoreModal(score) {
-  document.getElementById("scoremodal").innerText = `Score: ${score}`;
-}
-
-
-
 });
