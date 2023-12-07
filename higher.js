@@ -5,36 +5,44 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
   console.log(d.skrald);
 
   function updateTextOnCorrectAnswer() {
-    var vsTextElement = document.querySelector(".vsText");
+    let vsTextElement = document.querySelector(".vsText");
+    let vsButton = document.querySelector(".vsButton");
 
-    if (vsTextElement) {
-      // Store the original text content
-      var originalText = vsTextElement.innerHTML;
+    if (vsTextElement && vsButton) {
+      // Store the original text content and style
+      let originalText = vsTextElement.innerHTML;
+      let originalStyle = vsButton.style.background;
 
-      // Set the checkmark
+      // Set the checkmark and change button style
       vsTextElement.innerHTML = "&#10004;";
+      vsButton.style.background = "green";
 
       // Revert back to original text after 500ms
       setTimeout(function () {
         vsTextElement.innerHTML = originalText;
+        vsButton.style.background = originalStyle;
       }, 1000);
     } else {
       console.error("Element with class vsText not found");
     }
   }
   function updateTextOnWrongAnswer() {
-    var vsTextElement = document.querySelector(".vsText");
+    let vsTextElement = document.querySelector(".vsText");
+    let vsButton = document.querySelector(".vsButton");
 
     if (vsTextElement) {
       // Store the original text content
-      var originalText = vsTextElement.innerHTML;
+      let originalText = vsTextElement.innerHTML;
+      let originalStyle = vsButton.style.background;
 
       // Set the checkmark
       vsTextElement.innerHTML = "&#10006;";
+      vsButton.style.background = "red";
 
       // Revert back to original text after 500ms
       setTimeout(function () {
         vsTextElement.innerHTML = originalText;
+        vsButton.style.background = originalStyle;
       }, 1000);
     } else {
       console.error("Element with class vsText not found");
