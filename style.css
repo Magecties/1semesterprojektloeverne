@@ -10,12 +10,8 @@ body {
 }
 /* header for alle html*/
 .header {
-  position: absolute;
-  z-index: 1;
-  width: 100vw;
-  height: 5vw;
   background-color: #000000;
-  padding: 25px;
+  padding: 26px;
   text-align: center;
 }
 /*logo i header*/
