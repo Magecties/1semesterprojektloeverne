@@ -222,31 +222,45 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
           Number.parseInt(leftMaterial.nedbrydningstidværdi))
     ) {
       //Udfaldet ved korrekt svar
-      score++;
-      displayScore(score);
-      displayScoreModal(score);
-      console.log(score);
-      rigtiglyd.play();
+      document
+        .getElementById("leftImage")
+        .classList.add("image-transition", "move-left");
+      document
+        .getElementById("rightImage")
+        .classList.add("image-transition", "move-left");
 
-      //Rykker højre materiale til venstre og vælger et nyt tilfældigt materiale til højre.
-      leftMaterial = rightMaterial;
-      rightMaterial = getRandomMaterial();
+      setTimeout(() => {
+        // Remove the transition classes after the animation completes
+        document.getElementById("leftImage").classList.remove("move-left");
+        document.getElementById("rightImage").classList.remove("move-left");
 
-      //De nye materialer opdateres
-      document.getElementById("leftImage").src = leftMaterial.image;
-      document.getElementById("leftMaterial").innerHTML = leftMaterial.name;
-      document.getElementById("har").innerHTML = "har";
-      document.getElementById("leftnedbrydning").innerHTML =
-        leftMaterial.nedbrydningstid + "s";
-      document.getElementById("leftnedbrydningtext").innerHTML =
-        "nedbrydningstid";
-      document.getElementById("beskrivelse").innerText =
-        "Fakta:" + leftMaterial.beskrivelse;
+        score++;
+        displayScore(score);
+        displayScoreModal(score);
+        console.log(score);
+        rigtiglyd.play();
 
-      document.getElementById("rightImage").src = rightMaterial.image;
-      document.getElementById("rightMaterial").innerHTML = rightMaterial.name;
-      document.getElementById("harEn").innerHTML = "har en";
-      document.getElementById("rightnedbrydning").innerHTML = "nedbrydingstid";
+        //Rykker højre materiale til venstre og vælger et nyt tilfældigt materiale til højre.
+        leftMaterial = rightMaterial;
+        rightMaterial = getRandomMaterial();
+
+        //De nye materialer opdateres
+        document.getElementById("leftImage").src = leftMaterial.image;
+        document.getElementById("leftMaterial").innerHTML = leftMaterial.name;
+        document.getElementById("har").innerHTML = "har";
+        document.getElementById("leftnedbrydning").innerHTML =
+          leftMaterial.nedbrydningstid + "s";
+        document.getElementById("leftnedbrydningtext").innerHTML =
+          "nedbrydningstid";
+        document.getElementById("beskrivelse").innerText =
+          "Fakta:" + leftMaterial.beskrivelse;
+
+        document.getElementById("rightImage").src = rightMaterial.image;
+        document.getElementById("rightMaterial").innerHTML = rightMaterial.name;
+        document.getElementById("harEn").innerHTML = "har en";
+        document.getElementById("rightnedbrydning").innerHTML =
+          "nedbrydingstid";
+      }, 500);
     }
     //Udfaldet ved forkert svar
     else {
@@ -269,7 +283,8 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
         tekstunder.innerHTML =
           "okay måske prøvede du lidt mere men stadig lort score";
       } else if (score < 25) {
-        imageunder.src = "https://media.giphy.com/media/szS3OL60OWuhmP82Mo/giphy.gif";
+        imageunder.src =
+          "https://media.giphy.com/media/szS3OL60OWuhmP82Mo/giphy.gif";
         console.log("score under 25");
         tekstunder.innerHTML =
           "WOW nu begynder det at ligne noget.... prøv at se om du kan nå 50?";
@@ -280,7 +295,8 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
         tekstunder.innerHTML =
           "ej okay nu gad vi ikke lave flere beskeder men du er ret god eller noget.... 100???";
       } else if (score > 100) {
-        imageunder.src = "https://media.giphy.com/media/xUn3Cuayeo8RTX23sI/giphy.gif";
+        imageunder.src =
+          "https://media.giphy.com/media/xUn3Cuayeo8RTX23sI/giphy.gif";
         console.log("score over 100");
         tekstunder.innerHTML =
           "what er du en motherfucking skraldegud eller hvad holy wtf motherfucking fuck fuck fuck shit du er god. Tak for at du spillede, måske lærte du også noget om skrald";
