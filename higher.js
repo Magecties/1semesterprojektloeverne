@@ -2,6 +2,25 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
   let rigtiglyd = new Audio("lyde/Correct Answer Sound Effect.mp3");
   let forkertlyd = new Audio("lyde/Spongebob Stinky Sound Effect.mp3");
 
+  function updateTextOnCorrectAnswer() {
+    var vsTextElement = document.querySelector(".vsText");
+
+    if (vsTextElement) {
+      // Store the original text content
+      var originalText = vsTextElement.innerHTML;
+
+      // Set the checkmark
+      vsTextElement.innerHTML = "&#10004;";
+
+      // Revert back to original text after 500ms
+      setTimeout(function () {
+        vsTextElement.innerHTML = originalText;
+      }, 1000);
+    } else {
+      console.error("Element with class vsText not found");
+    }
+  }
+
   // Her laves vores array af objekter
   const materials = [
     {
@@ -228,7 +247,7 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
       document
         .getElementById("rightImage")
         .classList.add("image-transition", "move-left");
-
+      updateTextOnCorrectAnswer();
       setTimeout(() => {
         // Remove the transition classes after the animation completes
         document.getElementById("leftImage").classList.remove("move-left");
