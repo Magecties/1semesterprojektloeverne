@@ -60,11 +60,14 @@ body {
 /* text på forside */
 .text {
   width: 50%;
-  padding: 20px;
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-bottom: 20px;
+  padding-right: 50px;
 }
 /* billede på forside */
 .picture {
-  width: 60%;
+  width: 50%;
 }
 /* billeder på higher or lower side */
 img {
@@ -76,22 +79,23 @@ img {
 }
 /* knappe til spil på forside */
 .button {
-  background-image: url(/billeder/skrald.jpg);
-  padding: 16px 32px;
+  background-color: #9c8281;
+  border-radius: 5px;
+  padding: 14px 28px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 32px;
+  font-size: 25px;
+  font-weight: 600;
   margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  color: black;
+  color: rgb(255, 255, 255);
   border: 2px solid #9c8281;
 }
+
 /* hover over knappen på forside */
 .button:hover {
-  background-image: url(/billeder/garbage.webp);
-  color: white;
+  background-image: url(/billeder/skrald.jpg);
+  color: rgb(0, 0, 0);
 }
 /* knapper i header */
 .button2 {
@@ -217,11 +221,4 @@ circle:hover {
   position: absolute;
   top: 35%;
   left: 80%;
-}
-
-/* CSS for the transition animation */
-
-.move-left {
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
 }
