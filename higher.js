@@ -22,6 +22,24 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
       console.error("Element with class vsText not found");
     }
   }
+  function updateTextOnWrongAnswer() {
+    var vsTextElement = document.querySelector(".vsText");
+
+    if (vsTextElement) {
+      // Store the original text content
+      var originalText = vsTextElement.innerHTML;
+
+      // Set the checkmark
+      vsTextElement.innerHTML = "&#10006;";
+
+      // Revert back to original text after 500ms
+      setTimeout(function () {
+        vsTextElement.innerHTML = originalText;
+      }, 1000);
+    } else {
+      console.error("Element with class vsText not found");
+    }
+  }
 
   // Her laves vores array af objekter
   const materials = [
@@ -295,47 +313,51 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
       // billeder til modalet der kommer alt efter hvor høj en score man har, her ændrer vi bare src til at være noget andet alt efter score.
       // vi starter med at lave en const der altid henter vores image med id under og så ændret vi den i vores if sætninger
       // vi gør det samme på teksten
-      const imageunder = document.getElementById("under");
-      const tekstunder = document.getElementById("undertekst");
+      updateTextOnWrongAnswer();
 
-      if (score < 5) {
-        imageunder.src =
-          "https://media.giphy.com/media/JyGUoHu2my7Ze/giphy.gif";
-        console.log("score under 5");
-        tekstunder.innerHTML =
-          "shit en dårlig score, det kan du fandme gøre bedre dumme taber svin motherfucker taber";
-      } else if (score < 10) {
-        imageunder.src =
-          "https://media.giphy.com/media/jp313yHGzTDBbw5Tg6/giphy.gif";
-        console.log("score under 10");
-        tekstunder.innerHTML =
-          "okay måske prøvede du lidt mere men stadig lort score";
-      } else if (score < 25) {
-        imageunder.src =
-          "https://media.giphy.com/media/szS3OL60OWuhmP82Mo/giphy.gif";
-        console.log("score under 25");
-        tekstunder.innerHTML =
-          "WOW nu begynder det at ligne noget.... prøv at se om du kan nå 50?";
-      } else if (score < 50) {
-        imageunder.src =
-          "https://media.giphy.com/media/2w6I6nCyf5rmy5SHBy/giphy.gif";
-        console.log("score under 50");
-        tekstunder.innerHTML =
-          "ej okay nu gad vi ikke lave flere beskeder men du er ret god eller noget.... 100???";
-      } else if (score > 100) {
-        imageunder.src =
-          "https://media.giphy.com/media/xUn3Cuayeo8RTX23sI/giphy.gif";
-        console.log("score over 100");
-        tekstunder.innerHTML =
-          "what er du en motherfucking skraldegud eller hvad holy wtf motherfucking fuck fuck fuck shit du er god. Tak for at du spillede, måske lærte du også noget om skrald";
-      }
+      setTimeout(() => {
+        const imageunder = document.getElementById("under");
+        const tekstunder = document.getElementById("undertekst");
 
-      forkertlyd.play();
-      modal.style.display = "block";
-      //Score sættes til 0 og materialerne sættes på ny.
-      score = 0;
-      setMaterials();
-      displayScore(score);
+        if (score < 5) {
+          imageunder.src =
+            "https://media.giphy.com/media/JyGUoHu2my7Ze/giphy.gif";
+          console.log("score under 5");
+          tekstunder.innerHTML =
+            "shit en dårlig score, det kan du fandme gøre bedre dumme taber svin motherfucker taber";
+        } else if (score < 10) {
+          imageunder.src =
+            "https://media.giphy.com/media/jp313yHGzTDBbw5Tg6/giphy.gif";
+          console.log("score under 10");
+          tekstunder.innerHTML =
+            "okay måske prøvede du lidt mere men stadig lort score";
+        } else if (score < 25) {
+          imageunder.src =
+            "https://media.giphy.com/media/szS3OL60OWuhmP82Mo/giphy.gif";
+          console.log("score under 25");
+          tekstunder.innerHTML =
+            "WOW nu begynder det at ligne noget.... prøv at se om du kan nå 50?";
+        } else if (score < 50) {
+          imageunder.src =
+            "https://media.giphy.com/media/2w6I6nCyf5rmy5SHBy/giphy.gif";
+          console.log("score under 50");
+          tekstunder.innerHTML =
+            "ej okay nu gad vi ikke lave flere beskeder men du er ret god eller noget.... 100???";
+        } else if (score > 100) {
+          imageunder.src =
+            "https://media.giphy.com/media/xUn3Cuayeo8RTX23sI/giphy.gif";
+          console.log("score over 100");
+          tekstunder.innerHTML =
+            "what er du en motherfucking skraldegud eller hvad holy wtf motherfucking fuck fuck fuck shit du er god. Tak for at du spillede, måske lærte du også noget om skrald";
+        }
+
+        forkertlyd.play();
+        modal.style.display = "block";
+        //Score sættes til 0 og materialerne sættes på ny.
+        score = 0;
+        setMaterials();
+        displayScore(score);
+      }, 1000);
     }
   }
 
