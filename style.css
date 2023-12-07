@@ -218,3 +218,26 @@ circle:hover {
   top: 35%;
   left: 80%;
 }
+.vsButton {
+  position: absolute;
+  height: 3.125rem;
+  width: 3.125rem;
+  border-radius: 50%;
+  background: #fff;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.vsText {
+  vertical-align: middle;
+  text-align: center;
+  color: #000;
+  font-weight: 700;
+  display: inline-block;
+}
