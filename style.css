@@ -222,3 +222,9 @@ circle:hover {
   top: 35%;
   left: 80%;
 }
+
+/* CSS for the transition animation */
+.move-left {
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
