@@ -4,7 +4,7 @@
     <title>Header with Menu and Button</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body style="width: 100%; height: 100%; overflow: hidden">
     <header class="header">
       <!-- Vores logo -->
       <a href="index.html">
@@ -27,14 +27,14 @@
       </nav>
     </header>
 
-    <div class="container" style="display: flex; width: 100vw; height: 100vh">
+    <div class="container" style="display: flex; width: 100%; height: 80%">
       <div class="left">
         <img
           id="leftImage"
           class="hlimg"
           src=""
           alt="Left Image"
-          style="width: 50vw; height: auto; overflow: hidden"
+          style="max-width: 100%; max-height: auto; overflow: hidden"
         />
         <p
           id="leftMaterial"
