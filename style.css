@@ -230,8 +230,8 @@ circle:hover {
 }
 .vsButton {
   position: absolute;
-  height: 3.125rem;
-  width: 3.125rem;
+  height: 5.125rem;
+  width: 5.125rem;
   border-radius: 50%;
   background: #fff;
   left: 50%;
@@ -249,5 +249,6 @@ circle:hover {
   text-align: center;
   color: #000;
   font-weight: 700;
+  font-size: xx-large;
   display: inline-block;
 }

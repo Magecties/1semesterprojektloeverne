@@ -123,6 +123,7 @@ d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
     d3.select("#tooltip")
       .style("left", xPosition + 280 + "px")
       .style("top", yPosition + 180 + "px")
+      .style("z-index", 1)
       .select("#value")
       .text("Navn: " + d[2]);
     d3.select("#tooltip")
