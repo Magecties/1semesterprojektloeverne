@@ -207,10 +207,12 @@ circle:hover {
 }
 
 .restartspilknap {
-  background-color: #05f539;
+  background-color: #9c8281;
   color: rgb(255, 255, 255);
-  padding: 10px 35px;
+  margin-top: 14px;
+  padding: 12px 35px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
