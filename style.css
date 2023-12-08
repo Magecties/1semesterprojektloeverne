@@ -46,6 +46,18 @@ body {
   display: inline;
   margin-right: 60px;
 }
+
+.navheader2 {
+  display: inline-block;
+  margin-left: 100px;
+}
+
+/* li i header */
+.liheader2 {
+  display: inline;
+  margin-right: 60px;
+}
+
 /* container på forside */
 .container {
   display: flex;
@@ -63,7 +75,7 @@ body {
 }
 /* billede på forside */
 .picture {
-  width: 50%;
+  width: 57%;
 }
 /* billeder på higher or lower side */
 img {
