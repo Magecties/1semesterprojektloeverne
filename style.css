@@ -174,8 +174,58 @@ img {
   border: 2px solid black;
 }
 
+/*right*/
+#rightImage {
+  max-width: 100%;
+  max-height: auto;
+  overflow: hidden;
+}
+
+#rightMaterial {
+  position: absolute;
+  font-size: 32px;
+  top: 40%;
+  left: 70%;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.9);
+}
+#harEn {
+  position: absolute;
+  font-size: 20px;
+  top: 50%;
+  left: 70%;
+  color: white;
+  text-align: center;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.9);
+}
+#rightnedbrydning {
+  position: absolute;
+  font-size: 20px;
+  top: 75%;
+  left: 70%;
+  color: white;
+  text-align: center;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.9);
+}
+
 /* knapper på higher or lower*/
+#higher {
+  top: 60%;
+  left: 70%;
+}
+#lower {
+  top: 68%;
+  left: 70%;
+}
+
 .HLButton {
+  position: absolute;
+  height: 50px;
+  width: 200px;
+  top: 60%;
+  left: 70%;
   cursor: pointer;
   font-size: 32px;
   border: 2px solid black;
@@ -188,6 +238,16 @@ img {
 .HLButton:hover {
   background-color: white;
   -webkit-text-fill-color: black;
+}
+/*score*/
+#score {
+  position: absolute;
+  height: 50px;
+  width: 100px;
+  top: -2%;
+  left: 90%;
+  color: white;
+  font-size: xx-large;
 }
 /*tooltip til hover i visualisering */
 #tooltip {
