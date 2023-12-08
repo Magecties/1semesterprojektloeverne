@@ -291,7 +291,7 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
 
         //Rykker højre materiale til venstre og vælger et nyt tilfældigt materiale til højre.
         leftMaterial = rightMaterial;
-        rightMaterial = getRandomMaterial();
+        rightMaterial = getRandomMaterial(rightMaterial !== leftMaterial);
 
         //De nye materialer opdateres
         document.getElementById("leftImage").src = leftMaterial.image;
