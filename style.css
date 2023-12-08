@@ -38,17 +38,13 @@ body {
 /* navigation i header*/
 .navheader {
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 0px;
 }
-/* ul i header */
-.ulheader {
-  display: inline-block;
-  margin-left: 20px;
-}
+
 /* li i header */
 .liheader {
   display: inline;
-  margin-right: 20px;
+  margin-right: 60px;
 }
 /* container på forside */
 .container {
