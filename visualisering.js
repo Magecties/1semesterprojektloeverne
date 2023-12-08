@@ -64,7 +64,7 @@ d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
     .attr("text-anchor", "end")
     .attr("x", w)
     .attr("y", h - 50)
-    .text("Nedbrydningstid");
+    .text("Nedbrydningstidsværdi");
 
   // Append y-axis label
   svg
@@ -113,7 +113,7 @@ d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
     })
     .transition() // Start på transition
     .duration(1000)
-    .delay((d) => d[0] * 300)
+    .delay((d) => d[0] * 100)
     .attr("cy", (d) => yScale(d[1])); // Slutpunkt
 
   function handleMouseOver(d) {

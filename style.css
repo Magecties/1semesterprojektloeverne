@@ -38,18 +38,26 @@ body {
 /* navigation i header*/
 .navheader {
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 0px;
 }
-/* ul i header */
-.ulheader {
-  display: inline-block;
-  margin-left: 20px;
-}
+
 /* li i header */
 .liheader {
   display: inline;
-  margin-right: 20px;
+  margin-right: 60px;
 }
+
+.navheader2 {
+  display: inline-block;
+  margin-left: 99px;
+}
+
+/* li i header */
+.liheader2 {
+  display: inline;
+  margin-right: 60px;
+}
+
 /* container på forside */
 .container {
   display: flex;
@@ -60,14 +68,15 @@ body {
 /* text på forside */
 .text {
   width: 50%;
-  padding-top: 20px;
+  padding-top: 80px;
   padding-left: 50px;
   padding-bottom: 20px;
   padding-right: 50px;
 }
 /* billede på forside */
 .picture {
-  width: 50%;
+  width: 57%;
+  margin: 50px;
 }
 /* billeder på higher or lower side */
 img {
@@ -114,8 +123,118 @@ img {
 .button2:hover {
   -webkit-text-fill-color: #9c8281;
 }
+
+/*styling på higher or lower html*/
+
+/*left*/
+
+#leftImage {
+  max-width: 100%;
+  max-height: auto;
+  overflow: hidden;
+}
+#leftMaterial {
+  position: absolute;
+  font-size: 32px;
+  top: 40%;
+  left: 17.5%;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.9);
+}
+
+#har {
+  position: absolute;
+  font-size: 20px;
+  top: 50%;
+  left: 17.5%;
+  color: white;
+  text-align: center;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.9);
+}
+#leftnedbrydning {
+  position: absolute;
+  font-size: 32px;
+  top: 55%;
+  left: 17.5%;
+  color: white;
+  text-align: center;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.9);
+}
+#leftnedbrydningtext {
+  position: absolute;
+  font-size: 20px;
+  top: 63%;
+  left: 17.5%;
+  color: white;
+  text-align: center;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.9);
+}
+#beskrivelse {
+  position: absolute;
+  font-size: 20px;
+  top: 75%;
+  left: 2%;
+  color: black;
+  padding: 10px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid black;
+}
+
+/*right*/
+#rightImage {
+  max-width: 100%;
+  max-height: auto;
+  overflow: hidden;
+}
+
+#rightMaterial {
+  position: absolute;
+  font-size: 32px;
+  top: 40%;
+  left: 70%;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.9);
+}
+#harEn {
+  position: absolute;
+  font-size: 20px;
+  top: 50%;
+  left: 70%;
+  color: white;
+  text-align: center;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.9);
+}
+#rightnedbrydning {
+  position: absolute;
+  font-size: 20px;
+  top: 75%;
+  left: 70%;
+  color: white;
+  text-align: center;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.9);
+}
+
 /* knapper på higher or lower*/
+#higher {
+  top: 60%;
+  left: 70%;
+}
+#lower {
+  top: 68%;
+  left: 70%;
+}
+
 .HLButton {
+  position: absolute;
+  height: 50px;
+  width: 200px;
+  top: 60%;
+  left: 70%;
   cursor: pointer;
   font-size: 32px;
   border: 2px solid black;
@@ -128,6 +247,16 @@ img {
 .HLButton:hover {
   background-color: white;
   -webkit-text-fill-color: black;
+}
+/*score*/
+#score {
+  position: absolute;
+  height: 50px;
+  width: 100px;
+  top: -2%;
+  left: 90%;
+  color: white;
+  font-size: xx-large;
 }
 /*tooltip til hover i visualisering */
 #tooltip {
@@ -207,10 +336,12 @@ circle:hover {
 }
 
 .restartspilknap {
-  background-color: #05f539;
+  background-color: #9c8281;
   color: rgb(255, 255, 255);
-  padding: 10px 35px;
+  margin-top: 14px;
+  padding: 12px 35px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
