@@ -225,7 +225,9 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
   //Funktion der indsætter det tilfældige venstre og højre materiale.
   function setMaterials() {
     leftMaterial = getRandomMaterial();
-    rightMaterial = getRandomMaterial();
+    do {
+      rightMaterial = getRandomMaterial();
+    } while (rightMaterial === leftMaterial);
 
     document.getElementById("leftImage").src = leftMaterial.image;
     document.getElementById("leftMaterial").innerHTML = leftMaterial.name;
