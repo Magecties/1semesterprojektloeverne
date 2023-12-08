@@ -114,6 +114,66 @@ img {
 .button2:hover {
   -webkit-text-fill-color: #9c8281;
 }
+
+/*styling på higher or lower html*/
+
+/*left*/
+
+#leftImage {
+  max-width: 100%;
+  max-height: auto;
+  overflow: hidden;
+}
+#leftMaterial {
+  position: absolute;
+  font-size: 32px;
+  top: 40%;
+  left: 17.5%;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.9);
+}
+
+#har {
+  position: absolute;
+  font-size: 20px;
+  top: 50%;
+  left: 17.5%;
+  color: white;
+  text-align: center;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.9);
+}
+#leftnedbrydning {
+  position: absolute;
+  font-size: 32px;
+  top: 55%;
+  left: 17.5%;
+  color: white;
+  text-align: center;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.9);
+}
+#leftnedbrydningtext {
+  position: absolute;
+  font-size: 20px;
+  top: 63%;
+  left: 17.5%;
+  color: white;
+  text-align: center;
+  text-shadow: 0 6px 6px rgba(0, 0, 0, 0.9);
+}
+#beskrivelse {
+  position: absolute;
+  font-size: 20px;
+  top: 75%;
+  left: 2%;
+  color: black;
+  padding: 10px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid black;
+}
+
 /* knapper på higher or lower*/
 .HLButton {
   cursor: pointer;
