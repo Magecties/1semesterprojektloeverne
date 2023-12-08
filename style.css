@@ -76,6 +76,7 @@ body {
 /* billede på forside */
 .picture {
   width: 57%;
+  margin: 50px;
 }
 /* billeder på higher or lower side */
 img {
