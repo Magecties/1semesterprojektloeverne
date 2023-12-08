@@ -192,11 +192,11 @@ d3.json("http://localhost:3000/skrald").then(function (d) {
       beskrivelse: d.skrald[11].beskrivelse,
     },
     {
-      name: d.skrald[21].navn,
+      name: d.skrald[22].navn,
       image: "/Spilbilleder/Cykel.png",
-      nedbrydningstid: d.skrald[21].nedbrydningstid,
-      nedbrydningstidværdi: d.skrald[21].nedbrydningstidværdi,
-      beskrivelse: d.skrald[21].beskrivelse,
+      nedbrydningstid: d.skrald[22].nedbrydningstid,
+      nedbrydningstidværdi: d.skrald[22].nedbrydningstidværdi,
+      beskrivelse: d.skrald[22].beskrivelse,
     },
     {
       name: d.skrald[12].navn,
