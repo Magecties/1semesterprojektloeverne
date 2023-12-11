@@ -1,4 +1,4 @@
-d3.json("https://projektspillet-loverne.onrender.com/:3000/skrald").then(function (d) {
+d3.json("https://projektspillet-loverne.onrender.com:3000/skrald").then(function (d) {
   let rigtiglyd = new Audio("lyde/Correct Answer Sound Effect.mp3");
   let forkertlyd = new Audio("lyde/Spongebob Stinky Sound Effect.mp3");
 
