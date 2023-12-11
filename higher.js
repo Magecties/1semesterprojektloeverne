@@ -216,10 +216,10 @@ d3.json("https://projektspillet-loverne.onrender.com/skrald").then(function (
     },
   ];
 
-  // Array to store Image objects for preloading
+  // Tomt array til at lagre billederne
   const preloadedImages = [];
 
-  // Function to preload images
+  // Funktion for at præindlæse billederen (så animationen bliver mere smooth)
   function preloadImages() {
     materials.forEach((material) => {
       const image = new Image();
@@ -228,7 +228,7 @@ d3.json("https://projektspillet-loverne.onrender.com/skrald").then(function (
     });
   }
 
-  // Call the function to preload images
+  // Her kaldes ovenstående funktion
   preloadImages();
 
   //Der dannes to variable som venstre og højre materiale og scoren sættes til 0.
