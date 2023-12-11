@@ -2,7 +2,7 @@ const w = 900;
 const h = 450;
 const padding = 40;
 
-d3.json("http://localhost:3000/skraldfarlighed").then(function (d) {
+d3.json("https://projektspillet-loverne.onrender.com/skraldfarlighed").then(function (d) {
   const svg = d3
     .select("body")
     .append("svg")
