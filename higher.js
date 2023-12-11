@@ -225,7 +225,9 @@ d3.json("https://projektspillet-loverne.onrender.com/:3000/skrald").then(functio
   //Funktion der indsætter det tilfældige venstre og højre materiale.
   function setMaterials() {
     leftMaterial = getRandomMaterial();
-    rightMaterial = getRandomMaterial();
+    do {
+      rightMaterial = getRandomMaterial();
+    } while (rightMaterial === leftMaterial);
 
     document.getElementById("leftImage").src = leftMaterial.image;
     document.getElementById("leftMaterial").innerHTML = leftMaterial.name;
@@ -289,7 +291,7 @@ d3.json("https://projektspillet-loverne.onrender.com/:3000/skrald").then(functio
 
         //Rykker højre materiale til venstre og vælger et nyt tilfældigt materiale til højre.
         leftMaterial = rightMaterial;
-        rightMaterial = getRandomMaterial();
+        rightMaterial = getRandomMaterial(rightMaterial !== leftMaterial);
 
         //De nye materialer opdateres
         document.getElementById("leftImage").src = leftMaterial.image;
