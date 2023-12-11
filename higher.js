@@ -1,4 +1,6 @@
-d3.json("https://projektspillet-loverne.onrender.com/skrald").then(function (d) {
+d3.json("https://projektspillet-loverne.onrender.com/skrald").then(function (
+  d
+) {
   let rigtiglyd = new Audio("lyde/Correct Answer Sound Effect.mp3");
   let forkertlyd = new Audio("lyde/Spongebob Stinky Sound Effect.mp3");
 
@@ -200,14 +202,14 @@ d3.json("https://projektspillet-loverne.onrender.com/skrald").then(function (d) 
     },
     {
       name: d.skrald[12].navn,
-      image: "/Spilbilleder/møbler.png",
+      image: "/Spilbilleder/moebler.png",
       nedbrydningstid: d.skrald[12].nedbrydningstid,
       nedbrydningstidværdi: d.skrald[12].nedbrydningstidværdi,
       beskrivelse: d.skrald[12].beskrivelse,
     },
     {
       name: d.skrald[21].navn,
-      image: "/Spilbilleder/Tøj.png",
+      image: "/Spilbilleder/Toej.png",
       nedbrydningstid: d.skrald[21].nedbrydningstid,
       nedbrydningstidværdi: d.skrald[21].nedbrydningstidværdi,
       beskrivelse: d.skrald[21].beskrivelse,
