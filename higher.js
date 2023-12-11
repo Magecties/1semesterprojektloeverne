@@ -202,14 +202,14 @@ d3.json("https://projektspillet-loverne.onrender.com/skrald").then(function (
     },
     {
       name: d.skrald[12].navn,
-      image: "/Spilbilleder/moebler.png",
+      image: "/Spilbilleder/Møbler.png",
       nedbrydningstid: d.skrald[12].nedbrydningstid,
       nedbrydningstidværdi: d.skrald[12].nedbrydningstidværdi,
       beskrivelse: d.skrald[12].beskrivelse,
     },
     {
       name: d.skrald[21].navn,
-      image: "/Spilbilleder/Toej.png",
+      image: "/Spilbilleder/Tøj.png",
       nedbrydningstid: d.skrald[21].nedbrydningstid,
       nedbrydningstidværdi: d.skrald[21].nedbrydningstidværdi,
       beskrivelse: d.skrald[21].beskrivelse,
