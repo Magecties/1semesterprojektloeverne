@@ -216,6 +216,21 @@ d3.json("https://projektspillet-loverne.onrender.com/skrald").then(function (
     },
   ];
 
+  // Array to store Image objects for preloading
+  const preloadedImages = [];
+
+  // Function to preload images
+  function preloadImages() {
+    materials.forEach((material) => {
+      const image = new Image();
+      image.src = material.image;
+      preloadedImages.push(image);
+    });
+  }
+
+  // Call the function to preload images
+  preloadImages();
+
   //Der dannes to variable som venstre og højre materiale og scoren sættes til 0.
   let leftMaterial, rightMaterial;
   let score = 0;
