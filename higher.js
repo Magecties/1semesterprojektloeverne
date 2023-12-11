@@ -219,7 +219,7 @@ d3.json("https://projektspillet-loverne.onrender.com/skrald").then(function (
   // Tomt array til at lagre billederne
   const preloadedImages = [];
 
-  // Funktion for at præindlæse billederen (så animationen bliver mere smooth)
+  // Funktion for at præindlæse billederne (så animationen bliver mere smooth)
   function preloadImages() {
     materials.forEach((material) => {
       const image = new Image();
