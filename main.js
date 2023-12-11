@@ -67,5 +67,5 @@ app.listen(PORT, () => {
 */
 
 app.listen(port, () => {
-  console.log(`fake magnus lytter på https://projektspillet-loverne.onrender.com:${port}`);
+  console.log(`fake magnus lytter på https://projektspillet-loverne.onrender.com/:${port}`);
 });
