@@ -3,10 +3,6 @@ const cors = require("cors");
 const app = express();
 const port = 3000;
 
-/*
-// ny port
-const PORT = process.env.PORT || 3030;
-*/
 const { Client } = require("pg");
 let pg = require("pg");
 let queryData = null;
@@ -16,7 +12,7 @@ app.use(cors({ origin: "*" }));
 const klient = new Client({
   user: "wqynvjtr",
   host: "cornelius.db.elephantsql.com",
-  database: "wqynvjtr", //læg mærke til at user og database er det samme på elephant, da vi er på en shared instance
+  database: "wqynvjtr",
   password: "p2fzm-0YY5RHj2hcczCiL63PoaxUPhtL",
   port: 5432,
   ssl: {
@@ -59,13 +55,8 @@ app.get("/skraldfarlighed", async (req, res) => {
   }
 });
 
-/*
-// ny port
-app.listen(PORT, () => {
-  console.log(`magnus har fikset det og lytter på ${PORT}`);
-});
-*/
-
 app.listen(port, () => {
-  console.log(`fake magnus lytter på https://projektspillet-loverne.onrender.com/:${port}`);
+  console.log(
+    `fake magnus lytter på https://projektspillet-loverne.onrender.com/:${port}`
+  );
 });

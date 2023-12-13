@@ -1,57 +1,11 @@
 d3.json("https://projektspillet-loverne.onrender.com/skrald").then(function (
   d
 ) {
+  // Lyde til svar på spil
   let rigtiglyd = new Audio("lyde/Correct Answer Sound Effect.mp3");
   let forkertlyd = new Audio("lyde/Spongebob Stinky Sound Effect.mp3");
 
-  console.log(d.skrald);
-
-  function updateTextOnCorrectAnswer() {
-    let vsTextElement = document.querySelector(".vsText");
-    let vsButton = document.querySelector(".vsButton");
-
-    if (vsTextElement && vsButton) {
-      // Store the original text content and style
-      let originalText = vsTextElement.innerHTML;
-      let originalStyle = vsButton.style.background;
-
-      // Set the checkmark and change button style
-      vsTextElement.innerHTML = "&#10004;";
-      vsButton.style.background = "green";
-
-      // Revert back to original text after 500ms
-      setTimeout(function () {
-        vsTextElement.innerHTML = originalText;
-        vsButton.style.background = originalStyle;
-      }, 1000);
-    } else {
-      console.error("Element with class vsText not found");
-    }
-  }
-  function updateTextOnWrongAnswer() {
-    let vsTextElement = document.querySelector(".vsText");
-    let vsButton = document.querySelector(".vsButton");
-
-    if (vsTextElement) {
-      // Store the original text content
-      let originalText = vsTextElement.innerHTML;
-      let originalStyle = vsButton.style.background;
-
-      // Set the checkmark
-      vsTextElement.innerHTML = "&#10006;";
-      vsButton.style.background = "red";
-
-      // Revert back to original text after 500ms
-      setTimeout(function () {
-        vsTextElement.innerHTML = originalText;
-        vsButton.style.background = originalStyle;
-      }, 1000);
-    } else {
-      console.error("Element with class vsText not found");
-    }
-  }
-
-  // Her laves vores array af objekter
+  // Her laves vores array af objekter som sætter billeder sammen med vores database
   const materials = [
     {
       name: d.skrald[0].navn,
@@ -271,6 +225,52 @@ d3.json("https://projektspillet-loverne.onrender.com/skrald").then(function (
       checkAnswer("lower");
     };
   }
+  // VS boks opdatering når man svarer rigtigt
+  function updateTextOnCorrectAnswer() {
+    let vsTextElement = document.querySelector(".vsText");
+    let vsButton = document.querySelector(".vsButton");
+
+    if (vsTextElement && vsButton) {
+      // Gem original text og style
+      let originalText = vsTextElement.innerHTML;
+      let originalStyle = vsButton.style.background;
+
+      // Sæt checktegn og ændre farven
+      vsTextElement.innerHTML = "&#10004;";
+      vsButton.style.background = "green";
+
+      // Tilbage til original efter kort delay
+      setTimeout(function () {
+        vsTextElement.innerHTML = originalText;
+        vsButton.style.background = originalStyle;
+      }, 1000);
+    } else {
+      console.error("Element with class vsText not found");
+    }
+  }
+  // VS boks opdatering ved forkert svar
+  function updateTextOnWrongAnswer() {
+    let vsTextElement = document.querySelector(".vsText");
+    let vsButton = document.querySelector(".vsButton");
+
+    if (vsTextElement) {
+      // Gem original text og style
+      let originalText = vsTextElement.innerHTML;
+      let originalStyle = vsButton.style.background;
+
+      // Sæt checktegn og ændre farven
+      vsTextElement.innerHTML = "&#10006;";
+      vsButton.style.background = "red";
+
+      // tilbage til original efter kort delay
+      setTimeout(function () {
+        vsTextElement.innerHTML = originalText;
+        vsButton.style.background = originalStyle;
+      }, 1000);
+    } else {
+      console.error("Element with class vsText not found");
+    }
+  }
   //Funktion, der tjekker om svaret er korrekt eller forkert
   function checkAnswer(choice) {
     if (
@@ -333,6 +333,7 @@ d3.json("https://projektspillet-loverne.onrender.com/skrald").then(function (
       // billeder til modalet der kommer alt efter hvor høj en score man har, her ændrer vi bare src til at være noget andet alt efter score.
       // vi starter med at lave en const der altid henter vores image med id under og så ændret vi den i vores if sætninger
       // vi gør det samme på teksten
+
       updateTextOnWrongAnswer();
 
       setTimeout(() => {
