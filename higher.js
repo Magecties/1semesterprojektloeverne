@@ -344,14 +344,13 @@ d3.json("https://projektspillet-loverne.onrender.com/skrald").then(function (
           imageunder.src =
             "https://media.giphy.com/media/JyGUoHu2my7Ze/giphy.gif";
           console.log("score under 5");
-          tekstunder.innerHTML =
-            "shit en dårlig score, det kan du fandme gøre bedre dumme taber svin motherfucker taber";
+          tekstunder.innerHTML = "Godt forsøg! Husk at øvelse gør mester.";
         } else if (score < 10) {
           imageunder.src =
             "https://media.giphy.com/media/jp313yHGzTDBbw5Tg6/giphy.gif";
           console.log("score under 10");
           tekstunder.innerHTML =
-            "okay måske prøvede du lidt mere men stadig lort score";
+            "Du klarede dig godt, men det kan stadig forbedres";
         } else if (score < 25) {
           imageunder.src =
             "https://media.giphy.com/media/szS3OL60OWuhmP82Mo/giphy.gif";
@@ -362,14 +361,11 @@ d3.json("https://projektspillet-loverne.onrender.com/skrald").then(function (
           imageunder.src =
             "https://media.giphy.com/media/2w6I6nCyf5rmy5SHBy/giphy.gif";
           console.log("score under 50");
-          tekstunder.innerHTML =
-            "ej okay nu gad vi ikke lave flere beskeder men du er ret god eller noget.... 100???";
+          tekstunder.innerHTML = "Inponerende præstation!";
         } else if (score > 100) {
           imageunder.src =
             "https://media.giphy.com/media/xUn3Cuayeo8RTX23sI/giphy.gif";
           console.log("score over 100");
-          tekstunder.innerHTML =
-            "what er du en motherfucking skraldegud eller hvad holy wtf motherfucking fuck fuck fuck shit du er god. Tak for at du spillede, måske lærte du også noget om skrald";
         }
 
         forkertlyd.play();
